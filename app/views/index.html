@@ -1,44 +1,251 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+UMD Caseworking Prototypes
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<!---Header title--->
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      UMD Caseworking Prototypes
+      <span class="govuk-caption-xl">{{releaseVersion}}</span>
+    </h1>{{releaseVersion | log }}
+    <p class="govuk-body-l">
+      Work in progress and design prototypes.
+    </p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+    <!---Styles--->
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+    <style>
+      .panel {
+        box-sizing: border-box;
+        clear: both;
+        border-left-style: solid;
+        padding: 0.2em 0.7em;
+        margin-bottom: 30px;
+      }
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+      .panel_release {
+        border-color: #ececec
+      }
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+      .panel_work-in-progress {
+        border-color: #ffc300
+      }
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
+      .panel_experimental {
+        border-color: #05bbbd
+      }
+
+      .heading_title {
+        color: #1d70b8
+      }
+    </style>
+
+
+    <!---Version9--->
+
+    <div>
+      <details>
+        <summary class="govuk-heading-m heading_title" role="button" aria-controls="details-content-9" aria-expanded="false">Version 9</summary>
+
+        <div class="panel panel-border-narrow panel_release" id="details-content-9" aria-hidden="true">
+          <h3 class="govuk-heading-m">Releases</h3>
+          <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+          <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+        </div>
+
+        <div class="panel panel-border-narrow panel_work-in-progress" id="details-content-9" aria-hidden="true">
+          <h3 class="govuk-heading-m">Work in progress</h3>
+          <h3 class="govuk-heading-m">Stage 2: Check and Correct (Web application)</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">ID Document check</a><b></h3>
+            <p class="govuk-body-m">Example generic route for a caseworker processing an ID document update<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a>
+            </div>
+          </details>
+
+          <h3 class="govuk-heading-m">Stage 5: Update my details (Identity approval)</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">ID Document update</a><b></h3>
+            <p class="govuk-body-m">Example 1:1 route for a caseworker processing a 'UMD' request following PCI & WICU checks by the CCT & RIS<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a>
+            </div>
+          </details>
+
+          <h3 class="govuk-heading-m">Superuser</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">Caseworking: Supervisor</a><b></h3>
+            <p class="govuk-body-m">Example route for a caseworking supervisor<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a>
+            </div>
+          </details>
+        </div>
+
+        <div class="panel panel-border-narrow panel_experimental" id="details-content-9" aria-hidden="true">
+          <h3 class="govuk-heading-m">Experimental</h3>
+          <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+          <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+      </details>
     </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <!---Version8--->
+
+    <div>
+      <details>
+        <summary class="govuk-heading-m heading_title" role="button" aria-controls="details-content-8" aria-expanded="false">Version 8</summary>
+
+        <div class="panel panel-border-narrow panel_release" id="details-content-8" aria-hidden="true">
+          <h3 class="govuk-heading-m">Releases</h3>
+          <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+          <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+        </div>
+
+        <div class="panel panel-border-narrow panel_work-in-progress" id="details-content-8" aria-hidden="true">
+          <h3 class="govuk-heading-m">Work in progress</h3>
+          <h3 class="govuk-heading-m">Stage 2: Check and Correct (Web application)</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version8/stage2/next-application">ID Document check</a><b></h3>
+            <p class="govuk-body-m">Example generic route for a caseworker processing an ID document update<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="/version8/stage2/next-application">Next application</a><br>
+              <a class="govuk-link" href="/version8/stage2/biographics-check">Biographics check</a><br>
+              <a class="govuk-link" href="#">Biographics check (editable)</a><br>
+              <a class="govuk-link" href="/version8/stage2/document-check">Document check</a><br>
+              <a class="govuk-link" href="#">Document check (editable)</a><br>
+              <a class="govuk-link" href="/version8/stage2/check-photo">Photo check</a><br>
+              <a class="govuk-link" href="/version8/stage2/review-and-submit">Review and submit to Cross Check Team (CCT)</a><br>
+              <a class="govuk-link" href="/version8/stage2/notify-rejection">Notify user</a><br>
+              <a class="govuk-link" href="/version8/stage2/submission-updated">Next application - updated case</a><br>
+              <a class="govuk-link" href="/version8/stage2/submission-referred">Next application - referred case</a><br>
+              <a class="govuk-link" href="/version8/stage2/submission-rejected">Next application - rejected case</a>
+            </div>
+          </details>
+
+          <h3 class="govuk-heading-m">Stage 5: Update my details (Identity approval)</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version8/stage5/next-application">ID Document update</a><b></h3>
+            <p class="govuk-body-m">Example 1:1 route for a caseworker processing a 'UMD' request following PCI & WICU checks by the CCT & RIS<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="/version8/stage5/next-application">Next application</a><br>
+              <a class="govuk-link" href="/version8/stage5/cross-check-fail">Cross check fail</a><br>
+              <a class="govuk-link" href="/version8/stage5/biographics-check">Biographics check</a><br>
+              <a class="govuk-link" href="/version8/stage5/document-check">Document check</a><br>
+              <a class="govuk-link" href="#">Check photo submission</a><br>
+              <a class="govuk-link" href="/version8/stage5/review-and-submit">Review and submit</a><br>
+              <a class="govuk-link" href="/version8/stage5/application-updated">Next application - updated case</a><br>
+              <a class="govuk-link" href="/version8/stage5/application-referred">Next application - referred case</a><br>
+              <a class="govuk-link" href="/version8/stage5/application-rejected">Next application - rejected case</a><br>
+              <a class="govuk-link" href="/version8/stage5/notify-rejection">Notify user</a>
+            </div>
+          </details>
+
+          <h3 class="govuk-heading-m">Superuser</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">Caseworking: Supervisor</a><b></h3>
+            <p class="govuk-body-m">Example route for a caseworking supervisor<p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a><br>
+              <a class="govuk-link" href="#">x</a>
+            </div>
+          </details>
+        </div>
+
+        <div class="panel panel-border-narrow panel_experimental" id="details-content-8" aria-hidden="true">
+          <h3 class="govuk-heading-m">Experimental</h3>
+          <a class="govuk-link" href="#">x</a><br>
+          <a class="govuk-link" href="#">x</a>
+      </details>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <!---Older--->
+
+    <div>
+      <details>
+        <summary class="govuk-heading-m heading_title" role="button" aria-controls="details-content-7" aria-expanded="false">Previous Versions</summary>
+
+        <div class="panel panel-border-narrow panel_release" id="details-content-7" aria-hidden="true">
+          <h3 class="govuk-heading-m">Releases</h3>
+          <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+          <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+        </div>
+
+        <div class="panel panel-border-narrow panel_work-in-progress" id="details-content-7" aria-hidden="true">
+          <h3 class="govuk-heading-m">Work in progress</h3>
+          <h3 class="govuk-heading-m">Stage 2: Check and Correct (Web application)</h3>
+        </div>
+
+        <div class="panel panel-border-narrow panel_experimental" id="details-content-7" aria-hidden="true">
+          <h3 class="govuk-heading-m">Experimental</h3>
+          <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+          <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
+      </details>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  </div>
 </div>
+
+
 
 {% endblock %}

@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+
+<!---Styles--->
+
+<style>
+a.next_application-next {
+  background-color: #005ea5;
+  box-sizing: border-box;
+  padding: 25px;
+  width: 100%;
+  text-decoration: underline;
+  line-height: 1.111111;
+  font-weight: 700;
+  font-size: 36px !important;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.govuk-grid-row a:hover {background-color: #248bbf}
+
+</style>
+
+
+<!---Content--->
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<a class="next_application-next" href="version8/stage2/biographics-check">
+			Next task
+		</a>
+	</div>
+</div>
+
+
+
+{% endblock %}
