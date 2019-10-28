@@ -67,7 +67,7 @@
   <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
     <th scope="row" class="govuk-table__header">Document number</th>
-    <td class="govuk-table__cell">KK0000000</td>
+    <td class="govuk-table__cell">K0000000</td>
   </tr>
   <tr class="govuk-table__row">
     <th scope="row" class="govuk-table__header">Document expiry date</th>
@@ -87,10 +87,12 @@
       <strong class="govuk-tag app-task-list__task-completed" id="biographic-check-completed">Successful</strong>
     </td>
   </tr>
-  </tbody>
-  </table>
+</tbody>
+</table>
 
-  <form class="form" action="/document-match-answer" method="post">
+<br><br>
+
+<form class="form" action="/document-match-answer" method="post">
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="document-hint">
@@ -114,19 +116,20 @@
         <label class="govuk-label govuk-radios__label" for="document-match-2">
           No
         </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="document-match-3" name="document-match" type="radio" value="theres-a-small-difference">
-          <label class="govuk-label govuk-radios__label" for="document-match-3">
-            There's a small difference
-        <span id="document-match-3-hint" class="govuk-hint govuk-radios_hint">
-          You can edit the identity document details if you think the user has made a genuine error (for example, missed a number)
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="document-match-3" name="document-match" type="radio" value="theres-a-small-difference">
+        <label class="govuk-label govuk-radios__label" for="document-match-3">
+          There's a small difference
+          <span id="document-match-3-hint" class="govuk-hint govuk-radios_hint">
+            You can edit the identity document details if you think the user has made a genuine error (for example, missed out a number)
           </span>
         </label>
       </div>
     </div>
   </fieldset>
 </div>
+
 
 <button class="govuk-button" data-module="govuk-button">
   Save and continue

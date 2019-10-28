@@ -8,8 +8,13 @@ UMD Caseworking Prototypes
 
 <!---Header title--->
 
-<h1 class="govuk-heading-xl">Check biographic details</h1>
+<div class="govuk-width-container">
 
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Check identity document details</h1>
+</div></div>
 
 <!---Styles--->
 
@@ -17,12 +22,17 @@ UMD Caseworking Prototypes
 .app-task-list__task-completed {
     float: none;
   }
+
+.govuk-list--bullet {
+  padding-left: 20px;
+}
+
 </style>
 
 
 <!---Content--->
 
-<main class="govuk-main-wrapper " id="main-content" role="main">
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
@@ -70,11 +80,13 @@ UMD Caseworking Prototypes
               Does the document pass both of these checks?
             </h3>
           </legend>
-          <span>
-            <ol>
-              <li>the submitted document details match the identity document photo</li>
-              <li>the document issuer is the same on the existing and submitted document</li>
-          </span>
+
+          <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds-from-desktop">
+            <ul class="govuk-list govuk-list--bullet">
+    <li>the submitted document details match the identity document photo</li>
+    <li>the document issuer is the same on the existing and submitted document</li></ul>
+</div></div>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="biographic-match" name="biographic-match" type="radio" value="yes">

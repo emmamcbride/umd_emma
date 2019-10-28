@@ -20,7 +20,7 @@ router.post('/biographic-match-answer', function (req, res) {
   }
   if (biographicMatch == 'theres-a-small-difference'){
     // Send user to next page
-    res.redirect('#')
+    res.redirect('/version8/stage2/biographics-check-edit')
   }
 
 
@@ -45,7 +45,7 @@ router.post('/document-match-answer', function (req, res) {
   }
   if (biographicMatch == 'theres-a-small-difference'){
     // Send user to next page
-    res.redirect('#')
+    res.redirect('/version8/stage2/document-check-edit')
   }
 
 
@@ -66,11 +66,89 @@ router.post('/request-decision-answer', function (req, res) {
   }
   if (requestDecision == "no"){
     // Send user to next page
-    res.redirect('/version8/stage2/submission-rejected')
+    res.redirect('/version8/stage2/notify-rejection')
   }
   if (requestDecision == "refer"){
     // Send user to next page
     res.redirect('/version8/stage2/submission-referred')
+  }
+
+
+})
+
+// Request decision //
+
+router.post('/biographic-edit-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var biographicsEdit = req.session.data['biographics-edit']
+
+
+// Check whether the variable matches a condition
+  if (biographicsEdit == "yes"){
+    // Send user to next page
+    res.redirect('/version8/stage2/document-check')
+  }
+
+
+})
+
+// Request decision //
+
+router.post('/document-edit-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var documentEdit = req.session.data['document-edit']
+
+
+// Check whether the variable matches a condition
+  if (documentEdit == "yes"){
+    // Send user to next page
+    res.redirect('/version8/stage2/check-photo')
+  }
+
+
+})
+
+// Request decision //
+
+router.post('/photo-check-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var photoCheck = req.session.data['photo-check']
+
+
+// Check whether the variable matches a condition
+  if (photoCheck == "yes"){
+    // Send user to next page
+    res.redirect('/version8/stage2/review-and-submit')
+  }
+  if (photoCheck == "no"){
+    // Send user to next page
+    res.redirect('/version8/stage2/review-and-submit')
+  }
+
+})
+
+// Biographic match advanced //
+
+router.post('/biographic-match-adv-answer', function (req, res) {
+
+  var biographicMatchAdv = req.session.data['biographic-match-adv']
+
+
+// Check whether the variable matches a condition
+  if (biographicMatchAdv == "yes"){
+    // Send user to next page
+    res.redirect('/version8/stage5/document-check')
+  }
+  if (biographicMatchAdv == "no"){
+    // Send user to next page
+    res.redirect('/version8/stage5/document-check')
+  }
+  if (biographicMatchAdv == 'theres-a-small-difference'){
+    // Send user to next page
+    res.redirect('/version8/stage5/document-check')
   }
 
 

@@ -8,7 +8,7 @@ UMD Caseworking Prototypes
 
 <!---Header title--->
 
-<h1 class="govuk-heading-xl">Check biographic details</h1>
+<h1 class="govuk-heading-xl">Check identity document details</h1>
 
 
 <!---Styles--->
@@ -65,59 +65,61 @@ UMD Caseworking Prototypes
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header app-custom-class"></th>
-            <th scope="col" class="govuk-table__header app-custom-class">Submitted biographic details</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Submitted document details</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Given names</th>
+            <th scope="row" class="govuk-table__header">Document number</th>
             <td class="govuk-table__cell">
-                <input class="govuk-input govuk-!-width-three-quarters" id="given-name" name="given-name" type="text" value="Federica">
+                <input class="govuk-input govuk-!-width-three-quarters" id="document-number" name="document-number" type="text" value="K0000000">
               </div>
 
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Surname</th>
-            <td class="govuk-table__cell">
-                <input class="govuk-input govuk-!-width-three-quarters" id="surname" name="surname" type="text" value="Rossini Del Monte Piu Lungo Di Quaranta">
-              </div>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Date of birth</th>
-            <td class="govuk-table__cell">
-                <fieldset class="govuk-fieldset" role="group">
-                  <div class="govuk-date-input" id="date-of-birth">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="number" pattern="[0-31]*" value="08">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="number" pattern="[0-12]*" value="12">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
+              <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Document expiry date</th>
+      <td class="govuk-table__cell" <fieldset class="govuk-fieldset" role="group">
+        <div class="govuk-date-input" id="expiry-date">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="expiry-date-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-date-day" name="expiry-date-day" type="number" pattern="[0-31]*" value="01">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="expiry-date-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-date-month" name="dexpiry-date-month" type="number" pattern="[0-12]*" value="04">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
 
-                        <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="number" pattern="[1900-2019]*" value="1968">
-                      </div>
-                    </div>
+            <label class="govuk-label govuk-date-input__label" for="expiry-date-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-date-year" name="expiry-date-year" type="number" pattern="[1900-2019]*" value="2017">
+          </div>
+          </div></div>
 
-                </fieldset>
-            </td>
-          </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Nationality</th>
+            <th scope="row" class="govuk-table__header">Document type</th>
+            <td class="govuk-table__cell">
+                  <select class="govuk-select govuk-!-width-three-quarters" id="document-type" name="document-type">
+                    <option value="Passport" selected="">Passport</option>
+                    <option value="National identity card">National identity card</option>
+                    <option value="Biometric residence card">Biometric residence card</option>
+                    <option value="Biometric residence permit">Biometric residence permit</option>
+                  </select>
+                </td></tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document issuer</th>
             <td class="govuk-table__cell">
 
-                <select class="govuk-select govuk-!-width-three-quarters" id="nationality" name="nationality">
+                <select class="govuk-select govuk-!-width-three-quarters" id="document-issuer" name="document-issuer">
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -315,7 +317,6 @@ UMD Caseworking Prototypes
                   <option value="Zambia">Zambia</option>
                   <option value="Zimbabwe">Zimbabwe</option>
                 </select>
-
             </td>
           </tr>
         </tbody>
@@ -327,13 +328,13 @@ UMD Caseworking Prototypes
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/biographic-edit-answer" method="post">
-        <button type="submit" class="govuk-button govuk-!-margin-right-1" name="biographics-edit" value="yes" data-module="govuk-button">
+    <form class="form" action="/document-edit-answer" method="post">
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" name="document-edit" value="yes" data-module="govuk-button">
           Save and continue
         </button>
 
 
-          <a href="/version8/stage2/biographics-check-edit" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          <a href="/version8/stage2/document-check-edit" role="button" draggable="false" class="govuk-button govuk-button--secondary">
           Undo changes</a>
 
 </div></div>

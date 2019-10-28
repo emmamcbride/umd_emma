@@ -8,7 +8,13 @@ UMD Caseworking Prototypes
 
 <!---Header title--->
 
+<div class="govuk-width-container">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
 <h1 class="govuk-heading-xl">Check biographic details</h1>
+</div></div>
 
 
 <!---Styles--->
@@ -22,12 +28,11 @@ UMD Caseworking Prototypes
 
 <!---Content--->
 
-<main class="govuk-main-wrapper " id="main-content" role="main">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Submitted on 10/05/2019</span>
-      <h2 class="govuk-heading-l">Submitted identity document</h2>
+      <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-m">Submitted identity document</h2>
 
 
       <table class="govuk-table">
@@ -62,7 +67,7 @@ UMD Caseworking Prototypes
   </tbody>
 </table>
 
-
+<form class="form" action="/biographic-match-adv-answer" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -75,22 +80,22 @@ UMD Caseworking Prototypes
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match" name="biographic-match" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="biographic-match">
+              <input class="govuk-radios__input" id="biographic-match-adv" name="biographic-match-adv" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match-2" name="biographic-match" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="biographic-match-2">
+              <input class="govuk-radios__input" id="biographic-match-adv-2" name="biographic-match-adv" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv-2">
                 No
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match-3" name="biographic-match" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="biographic-match-3">
+              <input class="govuk-radios__input" id="biographic-match-adv-3" name="biographic-match-adv" type="radio" value="theres-a-small-difference">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv-3">
                 There's a small difference
-                <span id="biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
+                <span id="biographic-match-adv-3-hint" class="govuk-hint govuk-radios_hint">
                   You can edit the personal details if you think the user has made a genuine error (for example, a spelling mistake)
                 </span>
               </label>
