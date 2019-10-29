@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span>
+<h1 class="govuk-heading-xl">Cross check fail</h1>
+
+<!---Styles--->
+
+
+<!---Content--->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<p class="govuk-body-l">Please note the following comment from the Cross Check Team</p>
+
+<p class="govuk-body">Applicant has passed Suitability, but the following may be of interest to eligibility caseworker:<p>
+<p class="govuk-body">The Watchlist relates to lost of stolen identity document <b>A12345678</b> reported by the bearer to the issuing authority on <b>26/09/2019</b>. The applicant has used this identity document to apply under the settlement scheme. Further investigation is required by the Eligibility Case Worker.<p>
+
+<button class="govuk-button govuk-button--start" data-module="govuk-button">
+  Continue with checks
+</button>
+
+</div>
+</div>
+
+{% endblock %}
+
+<button type="submit" class="govuk-button govuk-!-margin-right-1" name="document-edit" value="yes" data-module="govuk-button">
+  Save and continue
+</button>

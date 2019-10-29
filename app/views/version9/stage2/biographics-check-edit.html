@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<h1 class="govuk-heading-xl">Check biographic details</h1>
+
+
+<!---Styles--->
+
+<style>
+  .app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-l">Submitted identity document</h2>
+    </div>
+  </div>
+
+
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/version9/stage2/biographics-check">
+          Submission
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Case notes
+        </a>
+      </li>
+    </ul>
+
+
+  </div>
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="photoContainer" id="newPhotoContainer">
+        <div class="photoContainer--frame">
+          <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table" style="margin-bottom: 60px;">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col" width="20%"></th>
+          <th class="govuk-table__header" scope="col" width="40%">Chip scan</th>
+          <th class="govuk-table__header" scope="col" width="40%">MRZ OCR reading</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Chip validity</th>
+          <td class="govuk-table__cell"><strong class="govuk-tag app-task-list__task-completed" id="biographic-check-completed">Successful</strong></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Given names</th>
+          <td class="govuk-table__cell">Federica</td>
+          <td class="govuk-table__cell"><input class="govuk-input govuk-!-width-three-quarters" id="given-names" name="given-names" type="text" value="Federica"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Surname</th>
+          <td class="govuk-table__cell">Rossini Del Monte Piu Lungo Di Quaranta</td>
+          <td class="govuk-table__cell"><input class="govuk-input govuk-!-width-three-quarters" id="surname" name="surname" type="text" value="Rossini Del Monte Piu Lungo Di Quaranta"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Date of birth</th>
+          <td class="govuk-table__cell">08/12/1968</td>
+          <td class="govuk-table__cell">08/12/1968</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Nationality</th>
+          <td class="govuk-table__cell">Italian</td>
+          <td class="govuk-table__cell">Italian</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/biographic-edit-answer" method="post">
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" name="biographics-edit" value="yes" data-module="govuk-button">
+          Save and continue
+        </button>
+
+
+          <a href="/version8/stage2/biographics-check-edit" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Undo changes</a>
+
+</div></div>
+  {% endblock %}

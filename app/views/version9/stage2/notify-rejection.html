@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span>
+<h1 class="govuk-heading-xl">Notify applicant of rejection</h1>
+
+<!---Styles--->
+
+
+<!---Content--->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h2 class="govuk-heading-m">Create your rejection email to send to the applicant</h2>
+    <span id="more-detail-hint" class="govuk-hint">
+      Edit the contents of the email to your requirements
+    </span>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">
+        Additional email content
+      </label>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+
+<button class="govuk-button" data-module="govuk-button"><a href="/submission-rejected"
+  Send to applicant</a>
+</button>
+
+</div>
+</div>
+
+{% endblock %}

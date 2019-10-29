@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<h1 class="govuk-heading-xl">Check identity document details</h1>
+
+
+<!---Styles--->
+
+<style>
+  .app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <span class="govuk-caption-l">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-l">Submitted identity document</h2>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="photoContainer" id="newPhotoContainer">
+        <div class="photoContainer--frame">
+          <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table" style="margin-bottom: 60px;">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col" width="20%"></th>
+          <th class="govuk-table__header" scope="col" width="40%">Chip scan</th>
+          <th class="govuk-table__header" scope="col" width="40%">MRZ OCR reading</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Chip validity</th>
+          <td class="govuk-table__cell"><strong class="govuk-tag app-task-list__task-completed" id="biographic-check-completed">Successful</strong></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Document number</th>
+          <td class="govuk-table__cell">K0000000</td>
+          <td class="govuk-table__cell">K0000000</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Expiry date</th>
+          <td class="govuk-table__cell">01/04/2017</td>
+          <td class="govuk-table__cell">01/04/2017</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Document type</th>
+          <td class="govuk-table__cell">Passport</td>
+          <td class="govuk-table__cell">Passport</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__cell" scope="row">Document issuer</th>
+          <td class="govuk-table__cell">Italy</td>
+          <td class="govuk-table__cell">Italy</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/document-match-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="document-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Do these identity document details match?
+              </h3>
+            </legend>
+            <span id="document-hint" class="govuk-hint">
+              Check that the identity document details are the same as those shown on the identity document.
+            </span>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-match" name="document-match" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="document-match">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-match-2" name="document-match" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="document-match-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="document-match-3" name="document-match" type="radio" value="theres-a-small-difference">
+                <label class="govuk-label govuk-radios__label" for="document-match-3">
+                  There's a small difference
+                  <span id="document-match-3-hint" class="govuk-hint govuk-radios_hint">
+                    You can edit the identity document details if you think the user has made a genuine error (for example, missed out a number)
+                  </span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+    </div>
+  </div>
+
+  {% endblock %}

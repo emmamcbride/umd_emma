@@ -1,0 +1,124 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span>
+<h1 class="govuk-heading-xl">Review and submit decision</h1>
+
+<!---Styles--->
+
+<style>
+.govuk-tag_successful {
+  background-color: #2c673d;
+  float: none;
+}
+  </style>
+
+
+<!---Content--->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Automated checks which have been completed
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="biographic-check2-completed">
+                Cross check
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="biographic-check2-completed">Completed</strong>
+          </li>
+        </ul>
+      </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Checks you've completed
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="biographic-check2-completed">
+                      Biographic
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__task-completed" id="biographic-check2-completed">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="identity-document-completed">
+                      Identity document
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__task-completed" id="identity-document-completed">Completed</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="photo-check-completed">
+                      Photo
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__task-completed" id="photo-check-completed">Completed</strong>
+                </li>
+              </ul>
+            </li>
+          </ol>
+
+<h2 class="govuk-heading-m">Your notes</h2>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h3 class="govuk-fieldset__heading">
+        Should the customer's request be accepted?
+      </h3>
+    </legend>
+    <span id="biographic-hint" class="govuk-hint">
+      Your decision must take into account your earlier check outcomes
+    </span>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="biographic-match" name="biographic-match" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="biographic-match">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="biographic-match-2" name="biographic-match" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="biographic-match-2">
+          No
+        </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="biographic-match-3" name="biographic-match" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="biographic-match-3">
+            Refer
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Submit
+</button>
+
+</div>
+</div>
+
+{% endblock %}

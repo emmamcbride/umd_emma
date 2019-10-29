@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<h1 class="govuk-heading-xl">Check biographic details</h1>
+
+
+<!---Styles--->
+
+<style>
+  .app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-l">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-l">Submitted identity document</h2>
+    </div>
+  </div>
+
+
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="/version9/stage2/biographics-check">
+          Submission
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="/version9/stage2/biographics-check-casenotes">
+          Case notes
+        </a>
+      </li>
+    </ul>
+
+
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 6
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title"><button class="app-step-nav__button app-step-nav__button--title js-step-title-button" aria-expanded="false" aria-controls="step-panel-case-note"><span class="js-step-title-text">
+                    Case note
+                    Communication<br>
+                    <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+                    <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 5
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title"><button class="app-step-nav__button app-step-nav__button--title js-step-title-button" aria-expanded="false" aria-controls="step-panel-case-note"><span class="js-step-title-text">
+                    Case note
+                    Communication<br>
+                    <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+                    <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 4
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title"><button class="app-step-nav__button app-step-nav__button--title js-step-title-button" aria-expanded="false" aria-controls="step-panel-case-note"><span class="js-step-title-text">
+                    Case note
+                    Communication<br>
+                    <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+                    <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+
+
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 3
+                  </span>
+                </span>
+              </span>
+              Communication<br>
+              <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+              <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="5">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 2
+                  </span>
+                </span>
+              </span>
+              Communication<br>
+              <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+              <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+        <li class="app-step-nav__step js-step" id="case-note">
+          <div class="app-step-nav__header js-toggle-panel" data-position="6">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 1
+                  </span>
+                </span>
+              </span>
+              Communication<br>
+              <p class="govuk-body-m">13/07/2019 10:00 by <a href="#">jbloggs@homeoffice.gsi.gov.uk</a></p>
+              <p class="govuk-body">Customer contacted via telephone for new selfie submission chase follow up</p>
+            </h2>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+
+  </div>
+
+
+
+</main>
+
+<!-- Javascript -->
+<!-- <script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/public/javascripts/docs.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+  <script src="/public/javascripts/step-by-step-navigation.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation()
+    stepByStepNavigation.start($element)
+  </script> -->
+
+
+
+<!-- <button class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button> -->
+
+{% endblock %}
