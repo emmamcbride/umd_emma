@@ -1,0 +1,276 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+
+<!---Styles--->
+
+<style>
+
+  .panel {
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    padding: 0.2em 0.7em;
+    margin-bottom: 30px;
+  }
+
+  .panel-border-wide.alert-default {
+    border-color: #2b8cc4;
+    background-color: #dbeff9;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+ ul.app-task-list__items {
+  padding-left: 0px;
+}
+
+h2.govuk-heading-s   {
+    font-size: 22px;
+    margin-bottom: 0.6em;
+    margin-top: 0.6em;
+  }
+
+address.customer--address {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    margin-bottom: 1em;
+}
+
+</style>
+
+
+
+<!---Content--->
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span>
+    <h1 class="govuk-heading-xl">
+      Review and submit decision
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="panel panel-border-wide alert-default">
+        <section>
+          <h2 class="govuk-heading-s">Reason for referral</h2>
+          <div id="comment-1" class="comment">
+              <p class="govuk-body-s">10/12/2019 10:36 by Cameron Rowley (RowleyC512)</p>
+              <p>Referred to supervisor because the document is expired.</p>
+          </div>
+        </section>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <section>
+          <h2 class="govuk-heading-s">Change requested by customer</h2>
+         <p class="govuk-body">Identity document change</p>
+        </section>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <section class="customer">
+          <h2 class="govuk-heading-s">Customer's contact details</h2>
+          <h3 class="govuk-heading-s govuk-!-font-weight-regular customer--name">Name: Maria Musterfrau</h3>
+          <p class="govuk-body">Address:
+              191 Victoria Street,
+              Charing Cross,
+              SW1E 4EA,
+              United Kingdom
+            </p>
+            <ul class="govuk-list">
+              <li>Telephone: <a class="govuk-link customer--telephone" href="tel:1-562-867-5309">020 8529 0192</a></li>
+              <li>Email: <a class="govuk-link customer--email " href="mailto:1-562-867-5309">mariamusterfrau@gmail.com</a></li>
+            </ul>
+        </section>
+        <ul>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                Automated checks which have been completed
+              </h2>
+              <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <a class="app-task-list__task-name" href="approving-identity-cross-check-fail" aria-describedby="eligibility-completed" style="width: 65%;">
+                      Cross check
+                    </a>
+                    <strong class="govuk-tag govuk-tag--failed app-task-list__task-completed" id="eligibility-completed">Unsuccessful</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
+                        Biographic
+                    <!-- </a> -->
+                    <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
+                      Chip
+                    <!-- </a> -->
+                    <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
+                      Facial match
+                    <!-- </a> -->
+                    <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                      <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
+                        Liveness
+                      <!-- </a> -->
+                      <strong class="govuk-tag govuk-tag--warning app-task-list__task-completed" id="eligibility-completed">Warning</strong>
+                    </li>
+                </ul>
+            </li>
+          </ol>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Checks which caseworkers have completed
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="approving-identity-biographics-check" aria-describedby="eligibility-completed" style="width: 65%;">
+                Biographic
+              </a>
+              <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="approving-identity-document-check" aria-describedby="read-declaration-completed" style="width: 65%;">
+                Identity document
+              </a>
+              <strong class="govuk-tag govuk-tag--failed app-task-list__task-completed" id="eligibility-completed">Unsuccessful</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="approving-identity-photo-check" aria-describedby="read-declaration-completed">
+                Photo
+              </a>
+              <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <form method="post" action="task-list-success">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="application-after-checks-conditional-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Should the customer's document change request be accepted?
+                    </h1>
+                  </legend>
+                  <span id="submission-hint" class="govuk-hint">
+                    Your decision must take into account your earlier check outcomes
+                  </span>
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="application-after-checks-1" name="application-after-checks" type="radio" value="accept" data-aria-controls="conditional-application-after-checks-1">
+                  <label class="govuk-label govuk-radios__label" for="application-after-checks-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="application-after-checks-2" name="application-after-checks" type="radio" value="reject" aria-controls="conditional-application-after-checks-2" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" for="application-after-checks-2">
+                    No
+                  </label> </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-application-after-checks-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="reason-for-rejection">
+                      Add casenote as to the reason for rejection
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-full" id="reason-for-rejection" name="reason-for-rejection" rows="5" aria-describedby="reason-for-rejection-hint"></textarea>
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="application-after-checks-3" name="application-after-checks" type="radio" value="hold" aria-controls="conditional-application-after-checks-3" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="application-after-checks-3">
+                      Hold
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-application-after-checks-3">
+                      <div class="gov-form-group" style="margin-bottom: 15px;">
+                        <label class="govuk-label" for="holdType">Hold type</label>
+                        <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
+                          <option value="All types" selected="">All types</option>
+                          <option value="none">None</option>
+                          <option value="ip_sat_ccd_pre_referral">Criminal Case Directorate (CCD) pre-referral</option>
+                          <option value="ip_sat_european_arrest_warrant">European arrest warrant</option>
+                          <option value="ip_sat_extradition_marker">Extradition marker</option>
+                          <option value="ip_sat_impending_prosecution">Impending prosecution</option>
+                          <option value="ip_sat_intel">Intel</option>
+                          <option value="ip_sat_police">Police</option>
+                          <option value="ip_sat_qa">Quality assurance</option>
+                          <option value="ip_sat_scu_consideration">Special Case Unit (SCU) consideration</option>
+                        </select>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="reason-for-hold">
+                          Add casenote as to the reason for holding
+                        </label>
+                        <textarea class="govuk-textarea govuk-!-width-full" id="reason-for-hold" name="reason-for-hold" rows="5" aria-describedby="reason-for-hold-hint"></textarea>
+                      </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="application-after-checks-4" name="application-after-checks" type="radio" value="void" aria-controls="conditional-application-after-checks-4" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" for="application-after-checks-4">
+                      Void
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-application-after-checks-4">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="reason-for-voiding">
+                        Add casenote as to the reason for voiding
+                      </label>
+                      <textarea class="govuk-textarea govuk-!-width-full" id="reason-for-voiding" name="reason-for-voiding" rows="5" aria-describedby="reason-for-voiding-hint"></textarea>
+                    </div>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <button type="submit" class="govuk-button govuk-!-margin-right-1">
+              Submit
+            </button>
+            <a class="govuk-link" href="task-list.html" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
+                Cancel back to task list
+            </a>
+          </div>
+      </form>
+    </div>
+  </div>
+</main></div>
+
+
+
+
+</body>
+
+{% endblock %}
