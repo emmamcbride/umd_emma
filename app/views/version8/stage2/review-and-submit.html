@@ -103,7 +103,6 @@ ul.app-task-list__items{
 
 <form class="form" action="/request-decision-answer" method="post">
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h3 class="govuk-fieldset__heading">
         Should the customer's request be accepted?
@@ -112,29 +111,58 @@ ul.app-task-list__items{
     <span id="biographic-hint" class="govuk-hint">
       Your decision must take into account your earlier check outcomes
     </span>
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="request-decision" name="request-decision" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="request-decision">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="request-decision-2" name="request-decision" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="request-decision-2">
-          No
-        </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="request-decision-3" name="request-decision" type="radio" value="refer">
-          <label class="govuk-label govuk-radios__label" for="request-decision-3">
-            Refer
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
 
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__input" id="conditional-how-contacted-conditional">
+            <div class="govuk-form-group">
+
+            </div>
+
+          </div>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__input" id="conditional-how-contacted-conditional">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+              Refer to supervisor
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Add a casenote about the reason for referral
+              </label>
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+            </div>
+
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 <button class="govuk-button" data-module="govuk-button">
   Submit
 </button>

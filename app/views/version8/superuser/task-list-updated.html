@@ -1,8 +1,7 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  UMD Caseworking Prototypes
+UMD Caseworking Prototypes
 {% endblock %}
 
 {% block content %}
@@ -35,9 +34,45 @@
   }
 
   .pagination__link.current {
-      color: #0B0C0C;
-      font-weight: 700;
-      border: none;
+    color: #0B0C0C;
+    font-weight: 700;
+    border: none;
+  }
+
+  .panel-border-wide.alert-success {
+    border-color: #28a197;
+    background-color: #c6ece9;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel {
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    padding: 0.2em 0.7em;
+    margin-bottom: 30px;
+    padding-top: 3.2px;
+    padding-bottom: 3.2px;
+    padding-left: 11.2px;
+    padding-right: 11.2px;
+    text-size-adjust: 100%;
+  }
+
+  h2.govuk-heading-s {
+    font-size: 22px;
+    marigin-bottom: 0.6em;
+    margin-top: 0.6em;
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0px;
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0px;
   }
 
   .filter{
@@ -63,70 +98,75 @@
 
 <main class="govuk-main-wrapper " id="main-content" role="main">
 
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Task list</h1>
+  <div class="panel panel-border-wide alert-success">
+    <h2 class="govuk-heading-s">Request updated</h2>
+    <p>Task 107182890 has successfully been completed</p>
   </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full filter">
-    <div class="govuk-column-full">
-      <h3 class="govuk-heading-m">Filter</h3>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Task list</h1>
     </div>
-    <form action="" method="get">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <div class="govuk-form-group" style="margin-bottom: 0;">
-            <label class="govuk-label" for="reference-number">
-              Reference number
-            </label>
-            <input class="govuk-input" id="reference-number" name="reference-number" type="text">
-          </div>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="gov-form-group" style="margin-bottom: 0;">
-            <label class="govuk-label" for="status">Status</label>
-            <select class="govuk-select govuk-!-width-full" id="status" name="status">
-              <option value="All types" selected="">All status types</option>
-
-              <option value="new-referral">New referral</option>
-              <option value="ready-for-work">Ready for work</option>
-              <option value="on-hold">On hold</option>
-              <option value="assigned">Assigned</option>
-
-            </select>
-          </div>
-        </div>
-        <div class="govuk-grid-column-one-third">
-          <div class="gov-form-group" style="margin-bottom: 0;">
-            <label class="govuk-label" for="holdType">Hold type</label>
-            <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
-              <option value="All types" selected="">All hold types</option>
-              <option value="none">None</option>
-              <option value="ip_sat_ccd_pre_referral">Criminal Case Directorate (CCD) pre-referral</option>
-              <option value="ip_sat_european_arrest_warrant">European arrest warrant</option>
-              <option value="ip_sat_extradition_marker">Extradition marker</option>
-              <option value="ip_sat_impending_prosecution">Impending prosecution</option>
-              <option value="ip_sat_intel">Intel</option>
-              <option value="ip_sat_police">Police</option>
-              <option value="ip_sat_qa">Quality assurance</option>
-              <option value="ip_sat_scu_consideration">Special Case Unit (SCU) consideration</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-grid-row" style="margin-top: 1em;">
-        <div class="govuk-grid-column-full">
-          <div class="block-space">
-            <input class="govuk-button" type="submit" value="Submit">
-          </div>
-        </div>
-      </div>
-    </form>
   </div>
-</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full filter">
+      <div class="govuk-column-full">
+        <h3 class="govuk-heading-m">Filter</h3>
+      </div>
+      <form action="" method="get">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group" style="margin-bottom: 0;">
+              <label class="govuk-label" for="reference-number">
+                Reference number
+              </label>
+              <input class="govuk-input" id="reference-number" name="reference-number" type="text">
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="gov-form-group" style="margin-bottom: 0;">
+              <label class="govuk-label" for="status">Status</label>
+              <select class="govuk-select govuk-!-width-full" id="status" name="status">
+                <option value="All types" selected="">All status types</option>
+
+                <option value="new-referral">New referral</option>
+                <option value="ready-for-work">Ready for work</option>
+                <option value="on-hold">On hold</option>
+                <option value="assigned">Assigned</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="gov-form-group" style="margin-bottom: 0;">
+              <label class="govuk-label" for="holdType">Hold type</label>
+              <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
+                <option value="All types" selected="">All hold types</option>
+                <option value="none">None</option>
+                <option value="ip_sat_ccd_pre_referral">Criminal Case Directorate (CCD) pre-referral</option>
+                <option value="ip_sat_european_arrest_warrant">European arrest warrant</option>
+                <option value="ip_sat_extradition_marker">Extradition marker</option>
+                <option value="ip_sat_impending_prosecution">Impending prosecution</option>
+                <option value="ip_sat_intel">Intel</option>
+                <option value="ip_sat_police">Police</option>
+                <option value="ip_sat_qa">Quality assurance</option>
+                <option value="ip_sat_scu_consideration">Special Case Unit (SCU) consideration</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row" style="margin-top: 1em;">
+          <div class="govuk-grid-column-full">
+            <div class="block-space">
+              <input class="govuk-button" type="submit" value="Submit">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -195,11 +235,11 @@
             <td class="govuk-table__cell">European arrest warrant</td>
           </tr>
           <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-              <td class="govuk-table__cell">25/10/2019</td>
-              <td class="govuk-table__cell">Ready for work</td>
-              <td class="govuk-table__cell">Intel</td>
-            </tr>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">25/10/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">Intel</td>
+          </tr>
         </tbody>
       </table>
 
@@ -219,7 +259,7 @@
       </nav>
 
 
-      </div>
+    </div>
   </div>
 </main>
 
