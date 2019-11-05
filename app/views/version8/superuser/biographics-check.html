@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<div class="govuk-width-container">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Check biographic details</h1>
+</div></div>
+
+
+<!---Styles--->
+
+<style>
+.app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-m">Submitted identity document</h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Existing biographic details</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Submitted biographic details</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Given names</th>
+      <td class="govuk-table__cell">Maria</td>
+      <td class="govuk-table__cell">Maria</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Surname</th>
+      <td class="govuk-table__cell">Musterfrau</td>
+      <td class="govuk-table__cell">Musterfrau</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date of birth</th>
+      <td class="govuk-table__cell">31/12/1981</td>
+      <td class="govuk-table__cell">31/12/1981</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Nationality</th>
+      <td class="govuk-table__cell">German</td>
+      <td class="govuk-table__cell">German</td>
+    </tr>
+  </tbody>
+</table>
+
+<form class="form" action="/biographic-match-adv-answer" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+              Do the biographics match?
+            </h3>
+          </legend>
+          <span id="biographic-hint" class="govuk-hint">
+            Check that the given name, surname, date of birth and nationality are the same as those shown on the identity document.
+          </span>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="biographic-match-adv" name="biographic-match-adv" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="biographic-match-adv-2" name="biographic-match-adv" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv-2">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="biographic-match-adv-3" name="biographic-match-adv" type="radio" value="theres-a-small-difference">
+              <label class="govuk-label govuk-radios__label" for="biographic-match-adv-3">
+                There's a small difference
+                <span id="biographic-match-adv-3-hint" class="govuk-hint govuk-radios_hint">
+                  You can edit the personal details if you think the user has made a genuine error (for example, a spelling mistake)
+                </span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+      <a class="govuk-link" href="task-list.html" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
+          Back to summary list
+      </a>
+
+    </div>
+  </div>
+
+  {% endblock %}

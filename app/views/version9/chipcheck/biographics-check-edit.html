@@ -1,103 +1,96 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  UMD Caseworking Prototypes
+UMD Caseworking Prototypes
 {% endblock %}
 
 {% block content %}
 
 <!---Header title--->
 
+<h1 class="govuk-heading-xl">Check biographic details</h1>
+
 
 <!---Styles--->
 
 <style>
-a.next_application-next {
-  background-color: #005ea5;
-  box-sizing: border-box;
-  padding: 25px;
-  width: 100%;
-  text-decoration: underline;
-  line-height: 1.111111;
-  font-weight: 700;
-  font-size: 36px !important;
-  display: inline-block;
-  margin-bottom: 15px;
-  color: #fff;
-}
+  .app-task-list__task-completed {
+    float: none;
+  }
 
-.govuk-grid-row a:hover {background-color: #248bbf}
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
 
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
 </style>
 
 
 <!---Content--->
 
-
 <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Search
-    </h1>
+      <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-m">Submitted identity document</h2>
+    </div>
   </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form method="post" action="#" _lpchecked="1">
 
-        <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              <h1 class="govuk-fieldset__heading">
-                Case details
-              </h1>
-            </legend>
-
-      <div class="govuk-form-group">
-          <label class="govuk-label" for="reference-name">
-            Reference number
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="reference-name" name="reference-name" type="text">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="photoContainer" id="newPhotoContainer">
+        <div class="photoContainer--frame">
+          <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
         </div>
+      </div>
+    </div>
+  </div>
 
-        </fieldset>
 
-        <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              <h1 class="govuk-fieldset__heading">
-                Applicant details
-              </h1>
-            </legend>
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="given-name">
-                  Given name
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="given-name" name="given-name" type="text">
-            </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="Surname">
-                Surname
-              </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="Surname" name="Surname" type="text">
-            </div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class">Submitted biographic details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Given names</th>
+            <td class="govuk-table__cell">
+                <input class="govuk-input govuk-!-width-three-quarters" id="given-name" name="given-name" type="text" value="Federica">
+              </div>
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-                  <legend class="govuk-fieldset__legend">
-                      <h1 class="govuk-fieldset__heading">
-                        Date of birth?
-                      </h1>
-                    </legend>
-                <div class="govuk-date-input" id="date-of-birth">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Surname</th>
+            <td class="govuk-table__cell">
+                <input class="govuk-input govuk-!-width-three-quarters" id="surname" name="surname" type="text" value="Rossini Del Monte Piu Lungo Di Quaranta">
+              </div>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date of birth</th>
+            <td class="govuk-table__cell">
+                <fieldset class="govuk-fieldset" role="group">
+                  <div class="govuk-date-input" id="date-of-birth">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="number" pattern="[1-31]*" value="">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="number" pattern="[0-31]*" value="08">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -105,27 +98,26 @@ a.next_application-next {
                         <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="number" pattern="[1-12]*" value="">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="number" pattern="[0-12]*" value="12">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
+
                         <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date" name="date-of-birth-year" type="number" pattern="[1900-2019]*" value="">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="number" pattern="[1900-2019]*" value="1968">
                       </div>
                     </div>
-                </div>
-              </fieldset>
-            </div>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="Nationality">
-                Nationality
-              </label>
-              <select class="govuk-select govuk-!-width-two-thirds" id="Nationality" name="Nationality">
-                  <option value="Any-nationalities" selected="">Any nationality</option>
+                </fieldset>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Nationality</th>
+            <td class="govuk-table__cell">
+
+                <select class="govuk-select govuk-!-width-three-quarters" id="nationality" name="nationality">
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
@@ -208,7 +200,7 @@ a.next_application-next {
                   <option value="Iraq">Iraq</option>
                   <option value="Ireland">Ireland</option>
                   <option value="Israel">Israel</option>
-                  <option value="Italy">Italy</option>
+                  <option value="Italy" selected="">Italy</option>
                   <option value="Jamaica">Jamaica</option>
                   <option value="Japan">Japan</option>
                   <option value="Jordan">Jordan</option>
@@ -322,29 +314,27 @@ a.next_application-next {
                   <option value="Yemen">Yemen</option>
                   <option value="Zambia">Zambia</option>
                   <option value="Zimbabwe">Zimbabwe</option>
-              </select>
-            </div>
-          </fieldset>
+                </select>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+<br>
 
 
-          <div class="govuk-form-group">
-            <button type="submit" class="govuk-button govuk-!-margin-right-1">
-              Search
-            </button>
-            <a href="#" role="button" draggable="false" class="govuk-button govuk-button--secondary">
-              Clear
-            </a>
-          </div>
-    </form>
-  </div>
-</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/biographic-edit-answer" method="post">
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" name="biographics-edit" value="yes" data-module="govuk-button">
+          Save and continue
+        </button>
 
 
-        </main>
+          <a href="/version9/stage2/biographics-check-edit" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Undo changes</a>
 
-	</div>
-</div>
-
-
-
-{% endblock %}
+</div></div>
+  {% endblock %}

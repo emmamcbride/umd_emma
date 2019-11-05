@@ -1,7 +1,8 @@
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-UMD Caseworking Prototypes
+  UMD Caseworking Prototypes
 {% endblock %}
 
 {% block content %}
@@ -14,26 +15,25 @@ UMD Caseworking Prototypes
 <!---Styles--->
 
 <style>
-  .app-task-list__task-completed {
-    float: none;
-  }
+.app-task-list__task-completed {
+  float: none;
+}
+.photo.medium.doubleWidth {
+  width: 540px;
+  height: 360px;
+}
 
-  .photo.medium.doubleWidth {
-    width: 540px;
-    height: 360px;
-  }
+.photo.medium {
+  background-size: cover;
+}
 
-  .photo.medium {
-    background-size: cover;
-  }
-
-  .photo {
-    border: 10px solid #ffffff;
-    margin-bottom: 3em;
-    box-shadow: 0px 2px 6px 2px #bfc1c3;
-    background-repeat: no-repeat;
-  }
-</style>
+.photo {
+  border: 10px solid #ffffff;
+  margin-bottom: 3em;
+  box-shadow: 0px 2px 6px 2px #bfc1c3;
+  background-repeat: no-repeat;
+}
+  </style>
 
 
 <!---Content--->
@@ -43,110 +43,123 @@ UMD Caseworking Prototypes
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
 
-      <span class="govuk-caption-l">Submitted on 01/05/2019</span>
-      <h2 class="govuk-heading-l">Submitted identity document</h2>
-    </div>
-  </div>
+    <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+    <h2 class="govuk-heading-m">Submitted identity document</h2>
+</div></div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div class="photoContainer" id="newPhotoContainer">
-        <div class="photoContainer--frame">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="photoContainer" id="newPhotoContainer">
+      <div class="photoContainer--frame">
           <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
-        </div>
-      </div>
-    </div>
-  </div>
+        </div></div></div></div>
 
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds-from-desktop">
 
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header app-custom-class"></th>
+    <th scope="col" class="govuk-table__header app-custom-class">Submitted document details</th>
+  </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Document number</th>
+    <td class="govuk-table__cell">K0000000</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Document expiry date</th>
+    <td class="govuk-table__cell">01/04/2017</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Document type</th>
+    <td class="govuk-table__cell">Passport</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Document issuer</th>
+    <td class="govuk-table__cell">Italy</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Automated chip check</th>
+    <td class="govuk-table__cell">
+      <strong class="govuk-tag app-task-list__task-completed" id="biographic-check-completed">Successful</strong>
+    </td>
+  </tr>
+</tbody>
+</table>
 
-  <div class="govuk-grid-column-full">
-    <table class="govuk-table" style="margin-bottom: 60px;">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" width="20%"></th>
-          <th class="govuk-table__header" scope="col" width="40%">Chip scan</th>
-          <th class="govuk-table__header" scope="col" width="40%">MRZ OCR reading</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell" scope="row">Chip validity</th>
-          <td class="govuk-table__cell"><strong class="govuk-tag app-task-list__task-completed" id="biographic-check-completed">Successful</strong></td>
-          <td class="govuk-table__cell"></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell" scope="row">Document number</th>
-          <td class="govuk-table__cell">K0000000</td>
-          <td class="govuk-table__cell">K0000000</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell" scope="row">Expiry date</th>
-          <td class="govuk-table__cell">01/04/2017</td>
-          <td class="govuk-table__cell">01/04/2017</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell" scope="row">Document type</th>
-          <td class="govuk-table__cell">Passport</td>
-          <td class="govuk-table__cell">Passport</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th class="govuk-table__cell" scope="row">Document issuer</th>
-          <td class="govuk-table__cell">Italy</td>
-          <td class="govuk-table__cell">Italy</td>
+<br><br>
 
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<form class="form" action="/document-match-answer" method="post">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading">
+          Do these identity document details match?
+        </h3>
+      </legend>
+      <span id="biographic-hint" class="govuk-hint">
+        Check that the identity document details are the same as those shown on the identity document.
+      </span>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-      <form class="form" action="/document-match-answer" method="post">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__input" id="conditional-how-contacted-conditional">
+              <div class="govuk-form-group">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="document-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h3 class="govuk-fieldset__heading">
-                Do these identity document details match?
-              </h3>
-            </legend>
-            <span id="document-hint" class="govuk-hint">
-              Check that the identity document details are the same as those shown on the identity document.
-            </span>
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="document-match" name="document-match" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="document-match">
-                  Yes
-                </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="document-match-2" name="document-match" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="document-match-2">
-                  No
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                No
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+                  Make a personal reminder why (optional)
                 </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="document-match-3" name="document-match" type="radio" value="theres-a-small-difference">
-                <label class="govuk-label govuk-radios__label" for="document-match-3">
-                  There's a small difference
-                  <span id="document-match-3-hint" class="govuk-hint govuk-radios_hint">
-                    You can edit the identity document details if you think the user has made a genuine error (for example, missed out a number)
-                  </span>
-                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
               </div>
             </div>
-          </fieldset>
-        </div>
-
-
-        <button class="govuk-button" data-module="govuk-button">
-          Save and continue
-        </button>
-
-    </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+            <label class="govuk-label govuk-radios__label" for="biographic-match-3">
+              There's a small difference
+              <span id="biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
+                You can edit the identity document details if you think the user has made a genuine error (for example, missed out a number)
+              </span>
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+            <div class="govuk-form-group">
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+            </div>
+          </div>
+      </div>
+    </fieldset>
   </div>
 
-  {% endblock %}
+
+
+<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+</div>
+</div>
+
+{% endblock %}

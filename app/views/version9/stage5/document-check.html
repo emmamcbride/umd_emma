@@ -27,6 +27,24 @@ UMD Caseworking Prototypes
   padding-left: 20px;
 }
 
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+
+
 </style>
 
 
@@ -36,9 +54,18 @@ UMD Caseworking Prototypes
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <span class="govuk-caption-l">Submitted on 10/05/2019</span>
-      <h2 class="govuk-heading-l">Submitted identity document</h2>
+      <span class="govuk-caption-m">Submitted on 10/05/2019</span>
+      <h2 class="govuk-heading-m">Submitted identity document</h2>
 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/stage-5-passport.jpeg" class="photo idDocument medium doubleWidth">
+            </div>
+          </div>
+        </div>
+      </div>
 
       <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -71,47 +98,79 @@ UMD Caseworking Prototypes
     </tr>
   </tbody>
 </table>
+<br>
+<form class="form" action="/biographic-match-adv-answer" method="post">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading">
+          Does the document pass both of these checks?
+        </h3>
+      </legend>
+
+      <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds-from-desktop">
+        <ul class="govuk-list govuk-list--bullet">
+<li>the submitted document details match the identity document photo</li>
+<li>the document issuer is the same on the existing and submitted document</li></ul>
+</div></div>
 
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">
-              Does the document pass both of these checks?
-            </h3>
-          </legend>
+        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-          <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds-from-desktop">
-            <ul class="govuk-list govuk-list--bullet">
-    <li>the submitted document details match the identity document photo</li>
-    <li>the document issuer is the same on the existing and submitted document</li></ul>
-</div></div>
-          <div class="govuk-radios">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match" name="biographic-match" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="biographic-match">
+              <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
                 Yes
               </label>
             </div>
+            <div class="govuk-radios__input" id="conditional-how-contacted-conditional">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match-2" name="biographic-match" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="biographic-match-2">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                 No
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="biographic-match-3" name="biographic-match" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="biographic-match-3">
-                There's a small difference
-                <span id="biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
-                  The personal details can be edited by another caseworker if you think the user has made a genuine error (for example, a spelling mistake)
-                </span>
-              </label>
-            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+                  Make a personal reminder why (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+              </div>
+
           </div>
-        </fieldset>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+            <label class="govuk-label govuk-radios__label" for="biographic-match-3">
+              There's a small difference
+              <span id="biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
+                The personal details can be edited by another caseworker if you think the user has made a genuine error (for example, a spelling mistake)
+              </span>
+            </label>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-phone">
+                Make a personal reminder why (optional)
+              </label>
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+            </div>
+
+          </div>
       </div>
+    </fieldset>
+  </div>
+<br>
+
 
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
