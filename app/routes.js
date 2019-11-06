@@ -154,5 +154,10 @@ router.post('/biographic-match-adv-answer', function (req, res) {
 
 })
 
+// Select all check boxes //
+
+$(".selectall").click(function(){
+$(".individual").prop("checked",$(this).prop("checked"));
+});
 
 module.exports = router
