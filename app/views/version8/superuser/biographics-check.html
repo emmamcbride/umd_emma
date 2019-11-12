@@ -54,7 +54,7 @@ UMD Caseworking Prototypes
         <div class="govuk-grid-column-two-thirds">
           <div class="photoContainer" id="newPhotoContainer">
             <div class="photoContainer--frame">
-              <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
+              <img src="/public/images/stage-5-passport.jpeg" class="photo idDocument medium doubleWidth">
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ UMD Caseworking Prototypes
   </tbody>
 </table>
 
-<form class="form" action="/biographic-match-adv-answer" method="post">
+<!-- <form class="form" action="/biographic-match-adv-answer" method="post"> -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -130,10 +130,16 @@ UMD Caseworking Prototypes
         </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">
+      <form class="form" action="/version8/superuser/document-check" method="post">
+          <button type="submit" class="govuk-button govuk-!-margin-right-1" name="notify-rejection" value="send" data-module="govuk-button">
+            Save and continue
+          </button>
+
+
+      <!-- <button class="govuk-button" data-module="govuk-button">
         Save and continue
-      </button>
-      <a class="govuk-link" href="task-list.html" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
+      </button> -->
+      <a class="govuk-link" href="/version8/superuser/review-and-submit" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
           Back to summary list
       </a>
 

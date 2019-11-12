@@ -11,7 +11,7 @@ UMD Caseworking Prototypes
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      UMD Caseworking Prototypes
+    Caseworking Prototypes
       <span class="govuk-caption-xl">{{releaseVersion}}</span>
     </h1>{{releaseVersion | log }}
     <p class="govuk-body-l">
@@ -53,16 +53,16 @@ UMD Caseworking Prototypes
       <details>
         <summary class="govuk-heading-m heading_title" role="button" aria-controls="details-content-9" aria-expanded="false">Version 9</summary>
 
-        <div class="panel panel-border-narrow panel_release" id="details-content-8" aria-hidden="true">
+        <!-- <div class="panel panel-border-narrow panel_release" id="details-content-8" aria-hidden="true">
           <h3 class="govuk-heading-m">Releases</h3>
           <p class="govuk-body-m">Stage 2: Document submission - <a class="govuk-link" href="#">See design release</a></p>
           <p class="govuk-body-m">Stage 5: Document submission - <a class="govuk-link" href="#">See design release</a></p>
-        </div>
+        </div> -->
 
         <div class="panel panel-border-narrow panel_work-in-progress" id="details-content-9" aria-hidden="true">
           <h3 class="govuk-heading-m">Work in progress</h3>
-          <h3 class="govuk-heading-m">Stage 2: Check and Correct (Web application)</h3>
-          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/stage2/next-application">ID Document check</a><b></h3>
+          <h3 class="govuk-heading-m">Stage 2: Check and correct</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/stage2/next-application">ID Document check (web)</a><b></h3>
             <p class="govuk-body-m">Example generic route for a caseworker processing an ID document update<p>
 
           <details class="govuk-details" data-module="govuk-details">
@@ -76,7 +76,7 @@ UMD Caseworking Prototypes
               <a class="govuk-link" href="/version9/stage2/biographics-check">Biographics check</a><br>
               <a class="govuk-link" href="/version9/stage2/biographics-check-edit">Biographics check (editable)</a><br>
               <a class="govuk-link" href="/version9/stage2/document-check">Document check</a><br>
-              <a class="govuk-link" href="/version9/stage2/document-check/edit">Document check (editable)</a><br>
+              <a class="govuk-link" href="/version9/stage2/document-check-edit">Document check (editable)</a><br>
               <a class="govuk-link" href="/version9/stage2/check-photo">Photo check</a><br>
               <a class="govuk-link" href="/version9/stage2/review-and-submit">Review and submit to Cross Check Team (CCT)</a><br>
               <a class="govuk-link" href="/version9/stage2/notify-rejection">Notify user</a><br>
@@ -86,45 +86,115 @@ UMD Caseworking Prototypes
             </div>
           </details>
 
-          <h3 class="govuk-heading-m">Stage 5: Update my details (Identity approval)</h3>
-          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">ID Document update</a><b></h3>
+
+            <!-- <h3 class="govuk-heading-m">Work in progress</h3>
+            <h3 class="govuk-heading-m">Stage 2: Chip check</h3> -->
+            <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/chipcheck/next-application">Chip check exception (app)</a><b></h3>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show all pages
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <a class="govuk-link" href="/version9/chipcheck/next-application">Next application</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/biographics-check">Biographics check w/ casenotes</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/biographics-check-edit">Biographics check (editable)</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/document-check">Document check w/ casenotes</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/facial-likeness">Facial likeness w/ casenotes</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/review-and-submit">Review and submit to Cross Check Team (CCT)</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/contact-customer">Ask for more information</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/notify-rejection">Notify user (rejection)</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/submission-updated">Next application - updated case</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/submission-referred">Next application - referred case</a><br>
+                <a class="govuk-link" href="/version9/chipcheck/submission-rejected">Next application - rejected case</a>
+              </div>
+            </details>
+
+          <h3 class="govuk-heading-m">Stage 5: Update my details/Approve identity</h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/stage5/next-application">ID Document update</a><b></h3>
             <p class="govuk-body-m">Example 1:1 route for a caseworker processing a 'UMD' request following PCI & WICU checks by the CCT & RIS<p>
 
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Show all pages
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a>
-            </div>
-          </details>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Show all pages
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <a class="govuk-link" href="/version9/stage5/next-application">Next application</a><br>
+                  <a class="govuk-link" href="/version9/stage5/cross-check-fail">Cross check fail</a><br>
+                  <a class="govuk-link" href="/version9/stage5/biographics-check">Biographics check</a><br>
+                  <a class="govuk-link" href="/version9/stage5/document-check">Document check</a><br>
+                  <a class="govuk-link" href="/version9/stage5/check-photo">Check photo submission</a><br>
+                  <a class="govuk-link" href="/version9/stage5/review-and-submit">Review and submit</a><br>
+                  <a class="govuk-link" href="/version9/stage5/application-updated">Next application - updated case</a><br>
+                  <a class="govuk-link" href="/version9/stage5/application-referred">Next application - referred case</a><br>
+                  <a class="govuk-link" href="/version9/stage5/application-rejected">Next application - rejected case</a><br>
+                  <a class="govuk-link" href="/version9/stage5/notify-rejection">Notify user</a>
+                </div>
+              </details>
 
           <h3 class="govuk-heading-m">Superuser</h3>
-          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">Caseworking: Supervisor</a><b></h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/superuser/task-list">Caseworking: Supervisor</a><b></h3>
             <p class="govuk-body-m">Example route for a caseworking supervisor<p>
 
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Show all pages
-              </span>
-            </summary>
-            <div class="govuk-details__text">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Show all pages
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <a class="govuk-link" href="/version9/superuser/task-list">Supervisor task list</a><br>
+                  <a class="govuk-link" href="/version9/superuser/task-list-hold">Supervisor 'on hold' task list</a><br>
+                  <a class="govuk-link" href="/version9/superuser/review-and-submit">Review and submit</a><br>
+                  <a class="govuk-link" href="/version9/superuser/case-notes">Case notes tab</a><br>
+                  <a class="govuk-link" href="/version9/superuser/biographics-check">Biographics check</a><br>
+                  <!-- <a class="govuk-link" href="/version9/superuser/document-check">Document check</a><br>
+                  <a class="govuk-link" href="/version9/superuser/check-photo">Check photo submission</a><br> -->
+                  <a class="govuk-link" href="/version9/superuser/notify-rejection">Notify user</a><br>
+                  <a class="govuk-link" href="/version9/superuser/task-list-updated">Supervisor task list - updated</a><br>
+                </div>
+              </details>
+              </div>
 
-            </div>
-          </details>
-        </div>
 
         <div class="panel panel-border-narrow panel_experimental" id="details-content-9" aria-hidden="true">
           <h3 class="govuk-heading-m">Experimental</h3>
-          <ul class="govuk-list">
-          <li><a class="govuk-link" href="/version9/experimental/review-and-submit">Review and submit</a><br></li>
-          <li><a class="govuk-link" href="/version9/experimental/contact-customer">Contact customer</a><br></li>
-          <li><a class="govuk-link" href="/version9/experimental/submit-casenote">Submit casenote</a></li>
+          <h3 class="govuk-heading-s"><b>Version 9.1 - 4th November<b></h3>
+            <p class="govuk-body-m">Contact customer/case note ideas following testing in Liverpool<p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Show all pages
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <a class="govuk-link" href="/version9/experimental/figma-version1"><b>Figma mock-up</b> (overview)</a><br>
+          <a class="govuk-link" href="/version9/experimental/review-and-submit">Review and submit</a><br>
+          <a class="govuk-link" href="/version9/experimental/contact-customer">Contact customer</a><br>
+          <a class="govuk-link" href="/version9/experimental/submit-casenote">Submit casenote</a>
+          </div>
       </details>
+
+      <h3 class="govuk-heading-s"><b>Components/patterns<b></h3>
+        <p class="govuk-body-m">Coding testing for prototype functions<p>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all pages
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <a class="govuk-link" href="/version9/experimental/select-all">Task list: Select all</a><br>
+      <a class="govuk-link" href="/version9/experimental/filter-option">Task list: Filter cases (broken)</a><br>
+      <a class="govuk-link" href="/components/radio-tester">Radio hold type 'reveal' buttons</a><br>
+      <a class="govuk-link" href="/components/success-tags">Success tags</a>
+      </div>
+  </details>
+    </div>
     </div>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -137,7 +207,7 @@ UMD Caseworking Prototypes
 
         <div class="panel panel-border-narrow panel_work-in-progress" id="details-content-8" aria-hidden="true">
           <h3 class="govuk-heading-m">Work in progress</h3>
-          <h3 class="govuk-heading-m">Stage 2: Check and Correct (Web application)</h3>
+          <h3 class="govuk-heading-m">Stage 2: Check and correct (Web application)</h3>
           <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version8/stage2/next-application">ID Document check</a><b></h3>
             <p class="govuk-body-m">Example generic route for a caseworker processing an ID document update<p>
 
@@ -152,7 +222,7 @@ UMD Caseworking Prototypes
               <a class="govuk-link" href="/version8/stage2/biographics-check">Biographics check</a><br>
               <a class="govuk-link" href="/version8/stage2/biographics-check-edit">Biographics check (editable)</a><br>
               <a class="govuk-link" href="/version8/stage2/document-check">Document check</a><br>
-              <a class="govuk-link" href="/version8/stage2/document-check/edit">Document check (editable)</a><br>
+              <a class="govuk-link" href="/version8/stage2/document-check-edit">Document check (editable)</a><br>
               <a class="govuk-link" href="/version8/stage2/check-photo">Photo check</a><br>
               <a class="govuk-link" href="/version8/stage2/review-and-submit">Review and submit to Cross Check Team (CCT)</a><br>
               <a class="govuk-link" href="/version8/stage2/notify-rejection">Notify user</a><br>
@@ -177,7 +247,7 @@ UMD Caseworking Prototypes
               <a class="govuk-link" href="/version8/stage5/cross-check-fail">Cross check fail</a><br>
               <a class="govuk-link" href="/version8/stage5/biographics-check">Biographics check</a><br>
               <a class="govuk-link" href="/version8/stage5/document-check">Document check</a><br>
-              <a class="govuk-link" href="#">Check photo submission</a><br>
+              <a class="govuk-link" href="/version8/stage5/check-photo">Check photo submission</a><br>
               <a class="govuk-link" href="/version8/stage5/review-and-submit">Review and submit</a><br>
               <a class="govuk-link" href="/version8/stage5/application-updated">Next application - updated case</a><br>
               <a class="govuk-link" href="/version8/stage5/application-referred">Next application - referred case</a><br>
@@ -187,7 +257,7 @@ UMD Caseworking Prototypes
           </details>
 
           <h3 class="govuk-heading-m">Superuser</h3>
-          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="#">Caseworking: Supervisor</a><b></h3>
+          <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version8/superuser/task-list">Caseworking: Supervisor</a><b></h3>
             <p class="govuk-body-m">Example route for a caseworking supervisor<p>
 
           <details class="govuk-details" data-module="govuk-details">
@@ -197,16 +267,13 @@ UMD Caseworking Prototypes
               </span>
             </summary>
             <div class="govuk-details__text">
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a><br>
-              <a class="govuk-link" href="#">x</a>
+              <a class="govuk-link" href="/version8/superuser/task-list">Supervisor task list</a><br>
+              <a class="govuk-link" href="/version8/superuser/review-and-submit">Review and submit</a><br>
+              <a class="govuk-link" href="/version8/superuser/biographics-check">Biographics check</a><br>
+              <a class="govuk-link" href="/version8/superuser/document-check">Document check</a><br>
+              <a class="govuk-link" href="/version8/superuser/check-photo">Check photo submission</a><br>
+              <a class="govuk-link" href="/version8/superuser/notify-rejection">Notify user</a><br>
+              <a class="govuk-link" href="/version8/superuser/task-list-updated">Supervisor task list - updated</a><br>
             </div>
           </details>
         </div>

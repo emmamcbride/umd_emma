@@ -121,6 +121,7 @@ UMD Caseworking Prototypes
 
   <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span>
@@ -129,6 +130,22 @@ UMD Caseworking Prototypes
         </h1>
       </div>
     </div>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="/version9/superuser/review-and-submit">
+            Submission
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="/version9/superuser/case-notes">
+            Case notes
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <div class="panel panel-border-wide alert-default">
@@ -174,33 +191,25 @@ UMD Caseworking Prototypes
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="approving-identity-cross-check-fail" aria-describedby="eligibility-completed" style="width: 65%;">
+                <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed" style="width: 65%;">
                   Cross check
                 </a>
                 <strong class="govuk-tag govuk-tag--failed app-task-list__task-completed" id="eligibility-completed">Unsuccessful</strong>
               </li>
               <li class="app-task-list__item">
-                <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
                 Biographic
-                <!-- </a> -->
                 <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
               </li>
               <li class="app-task-list__item">
-                <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
                 Chip
-                <!-- </a> -->
                 <strong class="govuk-tag govuk-tag--incomplete app-task-list__task-completed" id="eligibility-completed">Incomplete</strong>
               </li>
               <li class="app-task-list__item">
-                <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
                 Facial match
-                <!-- </a> -->
                 <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
               </li>
               <li class="app-task-list__item">
-                <!-- <a class="app-task-list__task-name" aria-describedby="eligibility-completed" style="width: 65%;"> -->
                 Liveness
-                <!-- </a> -->
                 <strong class="govuk-tag govuk-tag--warning app-task-list__task-completed" id="eligibility-completed">Warning</strong>
               </li>
             </ul>
@@ -217,19 +226,19 @@ UMD Caseworking Prototypes
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="approving-identity-biographics-check" aria-describedby="eligibility-completed" style="width: 65%;">
+                <a class="app-task-list__task-name" href="/version9/superuser/biographics-check" aria-describedby="eligibility-completed" style="width: 65%;">
                   Biographic
                 </a>
                 <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
               </li>
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="approving-identity-document-check" aria-describedby="read-declaration-completed" style="width: 65%;">
+                <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed" style="width: 65%;">
                   Identity document
                 </a>
                 <strong class="govuk-tag govuk-tag--failed app-task-list__task-completed" id="eligibility-completed">Unsuccessful</strong>
               </li>
               <li class="app-task-list__item">
-                <a class="app-task-list__task-name" href="approving-identity-photo-check" aria-describedby="read-declaration-completed">
+                <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
                   Photo
                 </a>
                 <strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong>
@@ -238,7 +247,7 @@ UMD Caseworking Prototypes
           </li>
         </ol>
 
-
+<form class="form" action="/request-decision-9s-answer" method="post">
 
         <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -251,43 +260,43 @@ UMD Caseworking Prototypes
                     </span>
 
                     <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                      <fieldset class="govuk-fieldset" aria-describedby="request-decision-9s-conditional-hint">
 
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="accept-case-conditional" name="accept-case" type="radio" value="yes" data-aria-controls="conditional-accept-case-conditional">
-                            <label class="govuk-label govuk-radios__label" for="accept-case-conditional">
+                            <input class="govuk-radios__input" id="request-decision-9s-conditional" name="request-decision-9s" type="radio" value="yes" data-aria-controls="conditional-request-decision-9s-conditional">
+                            <label class="govuk-label govuk-radios__label" for="request-decision-9s-conditional">
                               Yes
                             </label>
                           </div>
-                          <div class="govuk-radios__input" id="conditional-accept-case-conditional">
+                          <div class="govuk-radios__input" id="conditional-request-decision-9s-conditional">
                             <div class="govuk-form-group">
 
                             </div>
 
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="accept-case-conditional-2" name="accept-case" type="radio" value="no" data-aria-controls="conditional-accept-case-conditional-2">
-                            <label class="govuk-label govuk-radios__label" for="accept-case-conditional-2">
+                            <input class="govuk-radios__input" id="request-decision-9s-conditional-2" name="request-decision-9s" type="radio" value="no" data-aria-controls="conditional-request-decision-9s-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="request-decision-9s-conditional-2">
                               No
                             </label>
                           </div>
-                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-accept-case-conditional-2">
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-request-decision-9s-conditional-2">
                             <div class="govuk-form-group">
-                              <label class="govuk-label" for="accept-case-conditional-2">
+                              <label class="govuk-label" for="request-decision-9s-conditional-2">
                                 Add a casenote as to the reason for rejection
                               </label>
-                              <input class="govuk-input govuk-!-width-one-third" id="no-case" name="no-case" type="tel">
+                              <input class="govuk-input govuk-!-width-one-third" id="no-casenote" name="no-casenote" type="text">
                             </div>
 
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="accept-case-conditional-3" name="accept-case" type="radio" value="text" data-aria-controls="conditional-accept-case-conditional-3">
-                            <label class="govuk-label govuk-radios__label" for="accept-case-conditional-3">
+                            <input class="govuk-radios__input" id="request-decision-9s-conditional-3" name="request-decision-9s" type="radio" value="hold" data-aria-controls="conditional-request-decision-9s-conditional-3">
+                            <label class="govuk-label govuk-radios__label" for="request-decision-9s-conditional-3">
                               Hold
                             </label>
                           </div>
-                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-accept-case-conditional-3">
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-request-decision-9s-conditional-3">
                             <div class="govuk-form-group" style="margin-bottom: 15px;">
                               <label class="govuk-label" for="holdType">Hold type</label>
                               <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
@@ -304,25 +313,25 @@ UMD Caseworking Prototypes
                               </select>
                               </div>
                               <div class="govuk-form-group">
-                              <label class="govuk-label" for="accept-case-conditional-3">
+                              <label class="govuk-label" for="request-decision-9s-conditional-3">
                                 Add a casenote as to the reason for holding
                               </label>
-                              <input class="govuk-input govuk-!-width-one-third" id="hold-case" name="hold-case">
+                              <input class="govuk-input govuk-!-width-one-third" id="hold-casenote" name="hold-casenote">
                             </div>
 
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="accept-case-conditional-4" name="accept-case" type="radio" value="no" data-aria-controls="conditional-accept-case-conditional-4">
-                            <label class="govuk-label govuk-radios__label" for="accept-case-conditional-4">
-                              Void
+                            <input class="govuk-radios__input" id="request-decision-9s-conditional-4" name="request-decision-9s" type="radio" value="withdraw" data-aria-controls="conditional-request-decision-9s-conditional-4">
+                            <label class="govuk-label govuk-radios__label" for="request-decision-9s-conditional-4">
+                              Withdraw
                             </label>
                           </div>
-                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-accept-case-conditional-4">
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-request-decision-9s-conditional-4">
                             <div class="govuk-form-group">
-                              <label class="govuk-label" for="accept-case-conditional-4">
+                              <label class="govuk-label" for="request-decision-9s-conditional-4">
                                 Add a casenote as to the reason for voiding
                               </label>
-                              <input class="govuk-input govuk-!-width-one-third" id="no-case" name="no-case" type="tel">
+                              <input class="govuk-input govuk-!-width-one-third" id="void-casenote" name="void-casenote" type="text">
                             </div>
 
                           </div>
@@ -340,7 +349,7 @@ UMD Caseworking Prototypes
             <a class="govuk-link" href="task-list.html" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
               Cancel back to task list
             </a>
-          
+
       </div>
     </div>
   </main>

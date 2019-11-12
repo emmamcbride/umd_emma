@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<div class="govuk-width-container">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Compare facial likeness</h1>
+</div></div>
+
+
+<!---Styles--->
+
+<style>
+.app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium.thirdWidth {
+    width: 360px;
+    height: 240px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck/facial-likeness">
+              Submission
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck/case-notes-photo">
+              Case notes
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+          <h2 class="govuk-heading-m">Selfie</h2>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+          <span class="govuk-caption-m">Uploaded on 01/09/2019</span>
+          <h2 class="govuk-heading-m">Live photo</h2>
+        </div>
+
+
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">Uploaded on 01/09/2019</span>
+        <h2 class="govuk-heading-m">Chip photo</h2>
+      </div>
+    </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/selfie-photo.jpeg" style="height: auto; width: 100%; margin-right: 10px" class="photo">
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/live-photo.jpeg" style="height: auto; width: 100%; margin-right: 10px" class="photo">
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/doc-photo.jpeg" style="height: auto; width: 100%; margin-right: 10px" class="photo">
+            </div>
+          </div>
+        </div>
+      </div>
+</div></div>
+
+
+      <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Chip checks</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Chip photo to live photo</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Chip photo to selfie</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Selfie to live photo</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Liveness profile</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Photo liveness</th>
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/9cc-photo-match-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Is it the same person in all 3 photos?
+              </h3>
+            </legend>
+            <!-- <span id="biographic-hint" class="govuk-hint">
+              Check that the given name, surname, date of birth and nationality are the same as those shown on the identity document.
+            </span> -->
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="9cc-photo-match-conditional-hint">
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="9cc-photo-match-conditional" name="9cc-photo-match" type="radio" value="yes" data-aria-controls="conditional-9cc-photo-match-conditional">
+                    <label class="govuk-label govuk-radios__label" for="9cc-photo-match-conditional">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__input" id="conditional-9cc-photo-match-conditional">
+                    <div class="govuk-form-group">
+
+                    </div>
+
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="9cc-photo-match-conditional-2" name="9cc-photo-match" type="radio" value="no" data-aria-controls="conditional-9cc-photo-match-conditional-2">
+                    <label class="govuk-label govuk-radios__label" for="9cc-photo-match-conditional-2">
+                      No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9cc-photo-match-conditional-2">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-phone">
+                        Give a reason (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="no-reminder" name="no-reminder" type="text">
+                    </div>
+                  </div>
+
+
+                </div>
+                <!-- <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="9cc-photo-match-conditional-3" name="9cc-photo-match" type="radio" value="theres-a-small-difference" data-aria-controls="conditional-9cc-photo-match-conditional-3">
+                  <label class="govuk-label govuk-radios__label" for="9cc-photo-match-3">
+                    There's a small difference
+                    <span id="9cc-photo-match-3-hint" class="govuk-hint govuk-radios_hint">
+                      You can edit the personal details if you think the user has made a genuine error (for example, a spelling mistake)
+                    </span>
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9cc-photo-match-conditional-3">
+                  <div class="govuk-form-group">
+                    <!-- <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+                  </div> -->
+
+            </div>
+          </fieldset>
+        </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </div>
+  </div>
+
+  {% endblock %}

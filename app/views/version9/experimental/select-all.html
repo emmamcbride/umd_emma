@@ -58,15 +58,18 @@ UMD Caseworking Prototypes
     padding-top: 0px;
   }
 
-  .govuk-checkboxes_input{
-    cursor: pointer;
-    position: absolute;
-    z-index: 1;
-    top: -2px;
-    width: 44px;
-    height: 44px;
-    margin: 0;
-    opacity: 0;
+  .govuk-checkboxes--small .govuk-checkboxes__label::before {
+    top: 0px;
+    /* width: 24px;
+    height: 24px; */
+  }
+
+  .govuk-checkboxes--small .govuk-checkboxes__label::after {
+    top: 7px;
+    /* left: 6px;
+    width: 9px;
+    height: 3.5px;
+    border-width: 0 0 3px 3px; */
   }
 
 </style>
@@ -117,14 +120,14 @@ UMD Caseworking Prototypes
               <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
                 <option value="All types" selected="">All hold types</option>
                 <option value="none">None</option>
-                <option value="ip_sat_ccd_pre_referral">Criminal Case Directorate (CCD) pre-referral</option>
-                <option value="ip_sat_european_arrest_warrant">European arrest warrant</option>
-                <option value="ip_sat_extradition_marker">Extradition marker</option>
-                <option value="ip_sat_impending_prosecution">Impending prosecution</option>
-                <option value="ip_sat_intel">Intel</option>
-                <option value="ip_sat_police">Police</option>
-                <option value="ip_sat_qa">Quality assurance</option>
-                <option value="ip_sat_scu_consideration">Special Case Unit (SCU) consideration</option>
+                <option value="ip_sat_ccd_pre_referral">Hold A</option>
+                <option value="ip_sat_european_arrest_warrant">Hold B</option>
+                <option value="ip_sat_extradition_marker">Hold C</option>
+                <option value="ip_sat_impending_prosecution">Hold D</option>
+                <option value="ip_sat_intel">Hold E</option>
+                <option value="ip_sat_police">Hold F</option>
+                <option value="ip_sat_qa">Hold G</option>
+                <option value="ip_sat_scu_consideration">Hold H</option>
               </select>
             </div>
           </div>
@@ -146,84 +149,183 @@ UMD Caseworking Prototypes
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th width="5%" class="govuk-table__header" scope="col"></th>
+            <th width="5%" class="govuk-table__header" scope="col">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="selectall govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-all">
+                  <label class="govuk-label govuk-checkboxes__label" for="select">
+                  </label>
+                <!-- </div>
+              </div> -->
+            </th>
             <th class="govuk-table__header" scope="col">Reference</th>
             <th class="govuk-table__header" scope="col">Created date</th>
             <th class="govuk-table__header" scope="col">Status</th>
             <th class="govuk-table__header" scope="col">Hold type</th>
           </tr>
         </thead>
+
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual govuk-checkboxes__input"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">28/08/2019</td>
             <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">F</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">29/08/2019</td>
             <td class="govuk-table__cell">New referral</td>
             <td class="govuk-table__cell"></td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">03/09/2019</td>
             <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">European arrest warrant</td>
+            <td class="govuk-table__cell">A</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">10/09/2019</td>
             <td class="govuk-table__cell">Assigned</td>
-            <td class="govuk-table__cell">Special Case Unit (SCU) consideration</td>
+            <td class="govuk-table__cell">B</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">11/09/2019</td>
             <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">Police</td>
+            <td class="govuk-table__cell">F</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">12/10/2019</td>
             <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">G</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">20/09/2019</td>
             <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">Extradition marker</td>
+            <td class="govuk-table__cell">A</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">23/09/2019</td>
             <td class="govuk-table__cell">Assigned</td>
-            <td class="govuk-table__cell">Intel</td>
+            <td class="govuk-table__cell">C</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">05/10/2019</td>
             <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">European arrest warrant</td>
+            <td class="govuk-table__cell">E</td>
           </tr>
+
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><input type="checkbox" class="individual"/></td>
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
             <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
             <td class="govuk-table__cell">25/10/2019</td>
             <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">Intel</td>
+            <td class="govuk-table__cell"></td>
           </tr>
+
         </tbody>
       </table>
 

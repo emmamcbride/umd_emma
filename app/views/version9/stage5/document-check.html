@@ -66,6 +66,11 @@ UMD Caseworking Prototypes
           </div>
         </div>
       </div>
+      </div>
+      </div>
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
 
       <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -99,9 +104,15 @@ UMD Caseworking Prototypes
   </tbody>
 </table>
 <br>
-<form class="form" action="/biographic-match-adv-answer" method="post">
 
-  <div class="govuk-form-group">
+</div></div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/95-document-match-answer" method="post">
+
+<div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h3 class="govuk-fieldset__heading">
@@ -109,47 +120,46 @@ UMD Caseworking Prototypes
         </h3>
       </legend>
 
-      <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds-from-desktop">
+
         <ul class="govuk-list govuk-list--bullet">
 <li>the submitted document details match the identity document photo</li>
 <li>the document issuer is the same on the existing and submitted document</li></ul>
-</div></div>
+
 
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="95-document-match-conditional-hint">
 
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
-              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+              <input class="govuk-radios__input" id="95-document-match-conditional" name="95-document-match" type="radio" value="yes" data-aria-controls="conditional-95-document-match-conditional">
+              <label class="govuk-label govuk-radios__label" for="95-document-match-conditional">
                 Yes
               </label>
             </div>
-            <div class="govuk-radios__input" id="conditional-how-contacted-conditional">
+            <div class="govuk-radios__input" id="conditional-95-document-match-conditional">
               <div class="govuk-form-group">
 
               </div>
 
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+              <input class="govuk-radios__input" id="95-document-match-conditional-2" name="95-document-match" type="radio" value="no" data-aria-controls="conditional-95-document-match-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="95-document-match-conditional-2">
                 No
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-95-document-match-conditional-2">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="contact-by-phone">
                   Make a personal reminder why (optional)
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="text">
               </div>
 
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+            <input class="govuk-radios__input" id="95-document-match-conditional-3" name="95-document-match" type="radio" value="theres-a-small-difference" data-aria-controls="conditional-95-document-match-conditional-3">
             <label class="govuk-label govuk-radios__label" for="biographic-match-3">
               There's a small difference
               <span id="biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
@@ -157,14 +167,14 @@ UMD Caseworking Prototypes
               </span>
             </label>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-95-document-match-conditional-3">
             <div class="govuk-form-group">
               <label class="govuk-label" for="contact-by-phone">
                 Make a personal reminder why (optional)
               </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+              <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="text">
             </div>
-
+</div>
           </div>
       </div>
     </fieldset>

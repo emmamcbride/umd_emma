@@ -147,4 +147,169 @@ UMD Caseworking Prototypes
 </div>
 
 
+  <form class="form" action="/hold-decision-answer" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="hold-decision-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Place this case on hold
+                </h1>
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="hold-decision-conditional" name="hold-decision" type="radio" value="open" data-aria-controls="conditional-hold-decision-conditional">
+                  <label class="govuk-label govuk-radios__label" for="hold-decision-conditional">
+                    Leave this case open
+                  </label>
+                </div>
+
+ <!-- Question 2 -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="hold-decision-conditional-2" name="hold-decision" type="radio" value="later-time" data-aria-controls="conditional-hold-decision-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="hold-decision-conditional-2">
+                    Until a later time today
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hold-decision-conditional-2">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="hold-submission-hint" role="group">
+                      <label class="govuk-label" for="spec-date">
+                        Choose a specific time to hold the submission until
+                      </label>
+                      <span id="hold-submission-hint" class="govuk-hint">
+                        For example, 17 30
+                      </span>
+                      <div class="govuk-date-input" id="hold-submission">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="hold-submission-day">
+                              Hours
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hold-submission-day" name="hold-submission-day" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="hold-submission-month">
+                              Minutes
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hold-submission-month" name="hold-submission-month" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="reason-for-holding">
+                        Give reasons why you’re holding the submission
+                      </label>
+                      <span id="reason-for-holding-hint" class="govuk-hint">
+                        Do not include any personal information
+                      </span>
+                      <textarea class="govuk-textarea govuk-!-width-two-thirds" id="reason-for-holding" name="reason-for-holding" rows="5" aria-describedby="reason-for-holding-hint"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+<!-- Question 3 -->
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="hold-decision-conditional-3" name="hold-decision" type="radio" value="number-days" data-aria-controls="conditional-hold-decision-conditional-3">
+                  <label class="govuk-label govuk-radios__label" for="hold-decision-conditional-3">
+                    By a number of days
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hold-decision-conditional-3">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="hold-submission-hint" role="group">
+                      <label class="govuk-label" for="spec-date">
+                        Choose how many days to hold the submission for
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="hold-submission-month" name="hold-submission-month" type="number" pattern="[0-9]*">
+                  </div>
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="reason-for-holding">
+                        Give reasons why you’re holding the submission
+                      </label>
+                      <span id="reason-for-holding-hint" class="govuk-hint">
+                        Do not include any personal information
+                      </span>
+                      <textarea class="govuk-textarea govuk-!-width-two-thirds" id="reason-for-holding" name="reason-for-holding" rows="5" aria-describedby="reason-for-holding-hint"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+<!-- Question 4 -->
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="hold-decision-conditional-4" name="hold-decision" type="radio" value="spec-date" data-aria-controls="conditional-hold-decision-conditional-4">
+                <label class="govuk-label govuk-radios__label" for="hold-decision-conditional-4">
+                  Until a specific date
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hold-decision-conditional-4">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="hold-submission-hint" role="group">
+                    <label class="govuk-label" for="spec-date">
+                      Choose a specific date to hold the submission until
+                    </label>
+                    <span id="hold-submission-hint" class="govuk-hint">
+                      For example, 12 11 2019
+                    </span>
+                    <div class="govuk-date-input" id="hold-submission">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hold-submission-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hold-submission-day" name="hold-submission-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hold-submission-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hold-submission-month" name="hold-submission-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hold-submission-month">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hold-submission-month" name="hold-submission-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="govuk-form-group">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="reason-for-holding">
+                      Give reasons why you’re holding the submission
+                    </label>
+                    <span id="reason-for-holding-hint" class="govuk-hint">
+                      Do not include any personal information
+                    </span>
+                    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="reason-for-holding" name="reason-for-holding" rows="5" aria-describedby="reason-for-holding-hint"></textarea>
+                  </div>
+                </div>
+
+              </div>
+  </div>
+        </fieldset>
+    </div></form>
+
+
+
+
 {% endblock %}

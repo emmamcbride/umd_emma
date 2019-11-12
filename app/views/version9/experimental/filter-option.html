@@ -1,0 +1,362 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+
+<!---Styles--->
+
+<style>
+  .pagination__summary {
+    float: right;
+    font-family: "GDS Transport", Arial, sans-serif;
+    padding: 8px;
+  }
+
+  .pagination__link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+  .pagination__item {
+    display: inline-block;
+    list-style: none;
+  }
+
+  .pagination {
+    padding: 0px;
+  }
+
+  .pagination__link.current {
+    color: #0B0C0C;
+    font-weight: 700;
+    border: none;
+  }
+
+  .filter {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 2em 0;
+  }
+
+  .govuk-grid-column-full {
+    width: 100%;
+    float: left;
+  }
+
+  .govuk-grid-column-full {
+    box-sizing: border-box;
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0px;
+  }
+
+  .govuk-checkboxes--small .govuk-checkboxes__label::before {
+    top: 0px;
+    /* width: 24px;
+    height: 24px; */
+  }
+
+  .govuk-checkboxes--small .govuk-checkboxes__label::after {
+    top: 7px;
+    /* left: 6px;
+    width: 9px;
+    height: 3.5px;
+    border-width: 0 0 3px 3px; */
+  }
+
+</style>
+
+
+
+<!---Content--->
+
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Task list</h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full filter">
+      <div class="govuk-column-full">
+        <h3 class="govuk-heading-m">Filter</h3>
+      </div>
+      <form action="" method="get">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group" style="margin-bottom: 0;">
+              <label class="govuk-label" for="reference-number">
+                Reference number
+              </label>
+              <input class="govuk-input" id="reference-number" name="reference-number" type="text">
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="gov-form-group" style="margin-bottom: 0;">
+              <label class="govuk-label" for="status">Status</label>
+              <select class="govuk-select govuk-!-width-full" id="status" name="status">
+                <option value="All types" selected="">All status types</option>
+
+                <option value="new-referral">New referral</option>
+                <option value="ready-for-work">Ready for work</option>
+                <option value="on-hold">On hold</option>
+                <option value="assigned">Assigned</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="gov-form-group" style="margin-bottom: 0;">
+
+            <form class="form" action="/sort-hold-type" method="post">
+              <label class="wrapper govuk-label" for="holdType">Hold type</label>
+              <div class="button dropdown">
+              <select class="govuk-select govuk-!-width-full" id="hold-type">
+                <option value="all" id="sort-hold-type-1" name="sort-hold-type" value ="all" selected="" {{ checked("sort-hold-type", "all") }} >All hold types</option>
+                <option value="none" id="sort-hold-type-2" name="sort-hold-type" value ="none" {{ checked("sort-hold-type", "none") }} >None</option>
+                <option value="a" id="sort-hold-type-3" name="sort-hold-type" value ="a" {{ checked("sort-hold-type", "a") }} >Hold A</option>
+                <option value="b" id="sort-hold-type-4" name="sort-hold-type" value ="b" {{ checked("sort-hold-type", "b") }} >Hold B</option>
+                <option value="c" id="sort-hold-type-5" name="sort-hold-type" value ="c" {{ checked("sort-hold-type", "c") }} >Hold C</option>
+                <option value="d" id="sort-hold-type-6" name="sort-hold-type" value ="d" {{ checked("sort-hold-type", "d") }} >Hold D</option>
+                <option value="e" id="sort-hold-type-7" name="sort-hold-type" value ="e" {{ checked("sort-hold-type", "e") }} >Hold E</option>
+                <option value="f" id="sort-hold-type-8" name="sort-hold-type" value ="f" {{ checked("sort-hold-type", "f") }} >Hold F</option>
+                <option value="g" id="sort-hold-type-9" name="sort-hold-type" value ="g" {{ checked("sort-hold-type", "g") }} >Hold G</option>
+              </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row" style="margin-top: 1em;">
+          <div class="govuk-grid-column-full">
+            <div class="block-space">
+              <input class="govuk-button" type="submit" value="Submit">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th width="5%" class="govuk-table__header" scope="col">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="selectall govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-all">
+                  <label class="govuk-label govuk-checkboxes__label" for="select">
+                  </label>
+                <!-- </div>
+              </div> -->
+            </th>
+            <th class="govuk-table__header" scope="col">Reference</th>
+            <th class="govuk-table__header" scope="col">Created date</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+            <th class="govuk-table__header" scope="col">Hold type</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <div class="output">
+
+            <div id="a" class="hold a">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">28/08/2019</td>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr></div>
+
+          <div id="b" class="hold b">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">29/08/2019</td>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr></div>
+
+          <div id="c" class="hold c">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">03/09/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr></div>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">10/09/2019</td>
+            <td class="govuk-table__cell">Assigned</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">11/09/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">12/10/2019</td>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">20/09/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">23/09/2019</td>
+            <td class="govuk-table__cell">Assigned</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">05/10/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }}</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="select">
+                      </label>
+                    </div>
+                  </div>
+                </td>
+            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+            <td class="govuk-table__cell">25/10/2019</td>
+            <td class="govuk-table__cell">Ready for work</td>
+            <td class="govuk-table__cell">{{ data['sort-hold-type'] }/td>
+          </tr>
+
+          </div>
+        </tbody>
+      </table>
+
+
+
+      <nav role="navigation" aria-label="Pagination">
+        <div class="pagination__summary">Showing 1 - 10 of 186 results</div>
+        <ul class="pagination">
+          <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li> -->
+          <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 3">3</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}
