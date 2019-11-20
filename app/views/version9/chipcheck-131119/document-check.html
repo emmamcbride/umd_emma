@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Compare identity document details</h1>
+    </div>
+  </div>
+
+
+  <!---Styles--->
+
+  <style>
+    .app-task-list__task-completed {
+      float: none;
+    }
+
+    .photo.medium.doubleWidth {
+      width: 540px;
+      height: 360px;
+    }
+
+    .photo.medium {
+      background-size: cover;
+    }
+
+    .photo {
+      border: 10px solid #ffffff;
+      margin-bottom: 3em;
+      box-shadow: 0px 2px 6px 2px #bfc1c3;
+      background-repeat: no-repeat;
+    }
+  </style>
+
+
+  <!---Content--->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck-131119/document-check">
+              Submission
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck-131119/case-notes-doc">
+              Case notes
+            </a>
+          </li>
+        </ul>
+      </div></div></div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-m">Identity document</h2>
+</div></div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="photoContainer" id="newPhotoContainer">
+            <div class="photoContainer--frame">
+              <img src="/public/images/passport3.jpeg" class="photo idDocument medium doubleWidth">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class"></th>
+              <th scope="col" class="govuk-table__header app-custom-class">Scanned from MRZ</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Scanned from chip</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document number</th>
+            <td class="govuk-table__cell">SPECI2014</td>
+            <td class="govuk-table__cell">SPECI2014</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document expiry date</th>
+            <td class="govuk-table__cell">09/03/2024</td>
+            <td class="govuk-table__cell">09/03/2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document type</th>
+            <td class="govuk-table__cell">Passport</td>
+            <td class="govuk-table__cell">Passport</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document issuer</th>
+            <td class="govuk-table__cell">Netherlands</td>
+            <td class="govuk-table__cell">Netherlands</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">MRZ</th>
+            <td class="govuk-table__cell" style="font-size: 14px"><code>P&lt;NLDEE&lt;BRUIJN&lt;&lt;WILLEKE&lt;LISELOTTE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>SPECI19412NLD6503101F2403096999999990&lt;&lt;&lt;&lt;&lt;84</code></td>
+            <td class="govuk-table__cell" style="font-size: 14px"><code>P&lt;NLDEE&lt;BRUIJN&lt;&lt;WILLEKE&lt;LISELOTTE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>SPECI19412NLD6503101F2403096999999990&lt;&lt;&lt;&lt;&lt;84</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      </div></div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" width="30%" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class">Chip checks</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Group hashes</th>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Document signer</th>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Country signer</th>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Active authentication</th>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--passed app-task-list__task-completed" id="eligibility-completed">Successful</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<br>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <form class="form" action="/9-2-document-match-answer" method="post">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="biographic-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h3 class="govuk-fieldset__heading">
+            Do the identity document details match?
+          </h3>
+        </legend>
+        <span id="biographic-hint" class="govuk-hint">
+          Check that the details scanned from the MRZ match the details scanned from the chip
+        </span>
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="9-2-document-match-conditional" name="9-2-document-match" type="radio" value="yes" data-aria-controls="conditional-9-2-document-match-conditional">
+            <label class="govuk-label govuk-radios__label" for="9-2-document-match-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__input" id="conditional-9-2-document-match-conditional">
+            <div class="govuk-form-group">
+
+            </div>
+
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="9-2-document-match-conditional-2" name="9-2-document-match" type="radio" value="no" data-aria-controls="conditional-9-2-document-match-conditional-2">
+            <label class="govuk-label govuk-radios__label" for="9-2-document-match-conditional-2">
+             No
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9-2-document-match-conditional-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-phone">
+                Add a casenote (optional)
+              </label>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>          </div>
+</div>
+          </div>
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+    <!-- <a class="govuk-link" href="/version9/superuser/review-and-submit" role="button" draggable="false" style="display:inline-block; margin: 10px 0 0 10px; ">
+          Back to summary list
+      </a> -->
+
+  </div>
+</div>
+
+
+{% endblock %}

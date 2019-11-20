@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+
+<h1 class="govuk-heading-xl">Edit name</h1>
+
+
+<!---Styles--->
+
+<style>
+  .app-task-list__task-completed {
+    float: none;
+  }
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+</style>
+
+
+<!---Content--->
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-m">Submitted on 01/05/2019</span>
+      <h2 class="govuk-heading-m">Identity document</h2>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="photoContainer" id="newPhotoContainer">
+        <div class="photoContainer--frame">
+          <img src="/public/images/passport3.jpeg" class="photo idDocument medium doubleWidth">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+<p class="govuk-body">You can edit the name if you think the user has made a <br>genuine error (for example, a spelling mistake)</p>
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class">Value on the identity document</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Display name</th>
+            <td class="govuk-table__cell">
+                <input class="govuk-input govuk-!-width-three-quarters" id="given-name" name="given-name" type="text" value="TBC">
+              </div>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Additional given name</th>
+            <td class="govuk-table__cell">
+                <input class="govuk-input govuk-!-width-three-quarters" id="surname" name="surname" type="text" value="TBC">
+              </div>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Additional surname</th>
+                <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-!-width-three-quarters" id="surname" name="surname" type="text" value="Molenaar">
+                  </div>
+        </tbody>
+      </table>
+
+<br>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/version9/chipcheck-131119/document-check" method="post">
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" name="biographics-edit" value="yes" data-module="govuk-button">
+          Save and continue
+        </button>
+
+
+          <a href="/version9/chipcheck-131119/biographics-check-edit" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Undo changes</a>
+
+</div></div>
+  {% endblock %}

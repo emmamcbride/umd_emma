@@ -13,7 +13,7 @@ UMD Caseworking Prototypes
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-xl">Check biographic details</h1>
+<h1 class="govuk-heading-xl">Compare the given names and surname</h1>
 </div></div>
 
 
@@ -50,12 +50,12 @@ UMD Caseworking Prototypes
       <div class="govuk-tabs" data-module="govuk-tabs">
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="/version9/chipcheck/biographics-check">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck-131119/biographics-check">
               Submission
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="/version9/chipcheck/case-notes-bio">
+            <a class="govuk-tabs__tab" href="/version9/chipcheck-131119/case-notes-bio">
               Case notes
             </a>
           </li>
@@ -74,7 +74,7 @@ UMD Caseworking Prototypes
         <div class="govuk-grid-column-two-thirds">
           <div class="photoContainer" id="newPhotoContainer">
             <div class="photoContainer--frame">
-              <img src="/public/images/stage-2-passport.jpeg" class="photo idDocument medium doubleWidth">
+              <img src="/public/images/passport3.jpeg" class="photo idDocument medium doubleWidth">
             </div>
           </div>
         </div>
@@ -93,64 +93,84 @@ UMD Caseworking Prototypes
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Given names</th>
-      <td class="govuk-table__cell">Federica</td>
-      <td class="govuk-table__cell">Federica</td>
+      <td class="govuk-table__cell">Willeke Liselotte</td>
+      <td class="govuk-table__cell">Willeke Liselotte</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Surname</th>
-      <td class="govuk-table__cell">Rossini Del Monte Piu Lungo Di Quaranta</td>
-      <td class="govuk-table__cell">Rossini Del Monte Piu Lungo Di Quaranta</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Date of birth</th>
-      <td class="govuk-table__cell">08/12/1968</td>
-      <td class="govuk-table__cell">08/12/1968</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Nationality</th>
-      <td class="govuk-table__cell">Italian</td>
-      <td class="govuk-table__cell">Italian</td>
+      <td class="govuk-table__cell">De Bruijn</td>
+      <td class="govuk-table__cell">De Bruijn</td>
     </tr>
   </tbody>
 </table>
 <br>
 
+<table class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<div class="govuk-grid-column-full">
+<th scope="col" width="30%" class="govuk-table__header app-custom-class"></th>
+<th scope="col" class="govuk-table__header app-custom-class">Additional information</th>
+<th scope="col" class="govuk-table__header app-custom-class"></th>
+
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Display name</th>
+<td class="govuk-table__cell">TBC</td>
+<td class="govuk-table__cell"></td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Additional given names</th>
+<td class="govuk-table__cell">TBC</td>
+<td class="govuk-table__cell"></td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Additional surname</th>
+<td class="govuk-table__cell">Molenaar</td>
+<td class="govuk-table__cell"></td>
+</tr>
+</tbody>
+</table>
+
+<br><br>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<form class="form" action="/9cc-biographic-match-answer" method="post">
+<form class="form" action="/9-2-biographic-match-answer" method="post">
 
   <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="9cc-biographic-match-conditional-hint">
+    <fieldset class="govuk-fieldset" aria-describedby="9-2-biographic-match-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h3 class="govuk-fieldset__heading">
-                  Do the biographics match?
+                  Do the given names and surname match?
                 </h3>
               </legend>
               <span id="biographic-hint" class="govuk-hint">
-                Check that the given name, surname, date of birth and nationality are the same those shown on the identity document
+                Check that the given names and surname are the same as those shown on the identity document
               </span>
 
       <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="9cc-biographic-match-conditional" name="9cc-biographic-match" type="radio" value="yes" data-aria-controls="conditional-9cc-biographic-match-conditional">
-          <label class="govuk-label govuk-radios__label" for="9cc-biographic-match-conditional">
+          <input class="govuk-radios__input" id="9-2-biographic-match-conditional" name="9-2-biographic-match" type="radio" value="yes" data-aria-controls="conditional-9-2-biographic-match-conditional">
+          <label class="govuk-label govuk-radios__label" for="9-2-biographic-match-conditional">
             Yes
           </label>
         </div>
-        <div class="govuk-radios__input" id="conditional-9cc-biographic-match-conditional">
+        <div class="govuk-radios__input" id="conditional-9-2-biographic-match-conditional">
           <div class="govuk-form-group">
 
           </div>
 
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="9cc-biographic-match-conditional-2" name="9cc-biographic-match" type="radio" value="no" data-aria-controls="conditional-9cc-biographic-match-conditional-2">
-          <label class="govuk-label govuk-radios__label" for="9cc-biographic-match-conditional-2">
+          <input class="govuk-radios__input" id="9-2-biographic-match-conditional-2" name="9-2-biographic-match" type="radio" value="no" data-aria-controls="conditional-9-2-biographic-match-conditional-2">
+          <label class="govuk-label govuk-radios__label" for="9-2-biographic-match-conditional-2">
            No
           </label>
         </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9cc-biographic-match-conditional-2">
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-9-2-biographic-match-conditional-2">
           <div class="govuk-form-group">
             <label class="govuk-label" for="contact-by-phone">
               Add a casenote (optional)
@@ -159,11 +179,11 @@ UMD Caseworking Prototypes
 
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="9cc-biographic-match-conditional-3" name="9cc-biographic-match" type="radio" value="theres-a-small-difference" data-aria-controls="conditional-9cc-biographic-match-conditional-3">
-          <label class="govuk-label govuk-radios__label" for="9cc-biographic-match-conditional-3">
+          <input class="govuk-radios__input" id="9-2-biographic-match-conditional-3" name="9-2-biographic-match" type="radio" value="theres-a-small-difference" data-aria-controls="conditional-9-2-biographic-match-conditional-3">
+          <label class="govuk-label govuk-radios__label" for="9-2-biographic-match-conditional-3">
             There's a small difference
-            <span id="9cc-biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
-              You can edit the personal details if you think the user has made a genuine error (for example, a spelling mistake)
+            <span id="9-2-biographic-match-3-hint" class="govuk-hint govuk-radios_hint">
+              You can edit the biographic details if you think the user has made a genuine error (for example, a spelling mistake)
             </span>
           </label>
         </div>
@@ -180,7 +200,6 @@ UMD Caseworking Prototypes
     </fieldset>
   </div>
 
-
       <button class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
@@ -190,5 +209,6 @@ UMD Caseworking Prototypes
 
     </div>
   </div>
+
 
   {% endblock %}

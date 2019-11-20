@@ -6,16 +6,18 @@ UMD Caseworking Prototypes
 
 {% block content %}
 
+
+
+
 <!---Header title--->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-    Caseworking Prototypes
-      <span class="govuk-caption-xl">{{releaseVersion}}</span>
-    </h1>{{releaseVersion | log }}
+    Emma McBride
+      <br>
     <p class="govuk-body-l">
-      Work in progress and design prototypes.
+      Caseworking prototypes and personal development
     </p>
 
     <!---Styles--->
@@ -44,8 +46,64 @@ UMD Caseworking Prototypes
       .heading_title {
         color: #1d70b8
       }
+
+      ul.app-task-list__items {
+        padding: 0px 0px 0px 0px;
+      }
+
+
+      .panel-border-wide.alert-default-top {
+        border-color: #2b8cc4;
+        background-color: #F3DCFF;
+      }
+
+      .panel-border-wide {
+        border-left-width: 10px;
+      }
+
+      ul.app-task-list__items {
+        padding-left: 0px;
+      }
+
+      h2.govuk-heading-s {
+        font-size: 22px;
+        margin-bottom: 0.6em;
+        margin-top: 0.6em;
+      }
+
+      address.customer--address {
+        font-family: "nta", Arial, sans-serif;
+        font-size: 19px;
+        font-style: normal;
+        margin-bottom: 1em;
+      }
+
+
+      .panel-border-wide.alert-success {
+        border-color: #28a197;
+        background-color: #c6ece9;
+      }
+
+      .panel-border-wide {
+        border-left-width: 10px;
+      }
+
+      .panel-top {
+        box-sizing: border-box;
+        clear: both;
+        padding: 0.2em 0.7em;
+        margin-bottom: 30px;
+        padding-top: 13.2px;
+        padding-bottom: 13.2px;
+        padding-left: 30.2px;
+        padding-right: 30.2px;
+        text-size-adjust: 100%;
+      }
+
     </style>
 
+    <h1 class="govuk-heading-m">
+    Identity and Authentication: Caseworking</h1>
 
     <!---Version9--->
 
@@ -169,7 +227,7 @@ UMD Caseworking Prototypes
         <div class="panel panel-border-narrow panel_experimental" id="details-content-9" aria-hidden="true">
           <h3 class="govuk-heading-m">Experimental</h3>
 
-          <h3 class="govuk-heading-s"><b>Version 9.2 - 12th November<b></h3>
+          <h3 class="govuk-heading-s"><b>Version 9(2) - 12th November<b></h3>
             <p class="govuk-body-m">Chip check & contact customer route changes prior to testing in Sheffield<p>
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -179,10 +237,11 @@ UMD Caseworking Prototypes
                 </summary>
                 <div class="govuk-details__text">
                 <a class="govuk-link" href="/version9/experimental/figma-version2"><b>Figma mock-up</b> (overview)</a>
+                <h3 class="govuk-heading-s"><b><a class="govuk-link" href="/version9/chipcheck-131119/next-application">Chip check prototype</a><b></h3>
           </div>
         </details>
 
-          <h3 class="govuk-heading-s"><b>Version 9.1 - 4th November<b></h3>
+          <h3 class="govuk-heading-s"><b>Version 9(1) - 4th November<b></h3>
             <p class="govuk-body-m">Contact customer/case note ideas following testing in Liverpool<p>
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -314,8 +373,30 @@ UMD Caseworking Prototypes
         </div>
 
 
-  </div>
+
 </div>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<br>
+  <h1 class="govuk-heading-m">
+  Internship Admin</h1>
+
+<div>
+  <details>
+    <summary class="govuk-heading-m heading_title" role="button" aria-controls="details-content-7" aria-expanded="false">Personal Development</summary>
+
+    <div class="panel panel-border-narrow panel_release" id="details-content-7" aria-hidden="true">
+      <h3 class="govuk-heading-m">Development record and plan</h3>
+      <ul class="govuk-list">
+<li><a class="govuk-link" href="calendar">Daily record/learning plan</a></li>
+<li><a class="govuk-link" href="https://whimsical.com/X9fqgviFLmTe6AUohy3S9w">IDV/UMD user journey (ongoing)</a></li>
+    </ul>
+    </div>
+
+
+</div>
+</div>
+
 
 
 

@@ -662,6 +662,164 @@ router.post('/hold-decision-answer', function (req, res) {
 
 
 })
+
+//--------------------------------------------------------
+
+
+// Biographic match V9.2 CC//
+
+router.post('/9-2-biographic-match-answer', function (req, res) {
+
+  var biographicMatchE = req.session.data['9-2-biographic-match']
+
+
+// Check whether the variable matches a condition
+  if (biographicMatchE == "yes"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/document-check')
+  }
+  if (biographicMatchE == "no"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/document-check')
+  }
+  if (biographicMatchE == 'theres-a-small-difference'){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/biographics-check-edit')
+  }
+
+
+})
+
+// Document match V9.2 CC//
+
+router.post('/9-2-document-match-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var documentMatchE = req.session.data['9-2-document-match']
+
+
+// Check whether the variable matches a condition
+  if (documentMatchE == "yes"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/facial-likeness')
+  }
+  if (documentMatchE == "no"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/facial-likeness')
+  }
+
+
+})
+
+// Photo match V9.2 CC//
+
+router.post('/9-2-photo-match-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var photoCheckE = req.session.data['9-2-photo-match']
+
+
+// Check whether the variable matches a condition
+  if (photoCheckE == "yes"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/review')
+  }
+  if (photoCheckE == "no-accept"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/review')
+  }
+  if (photoCheckE == "no"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/review')
+  }
+
+
+})
+
+// Request decision V9.2 CC//
+
+router.post('/9-2-request-decision-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var requestDecisionE = req.session.data['9-2-request-decision']
+
+
+// Check whether the variable matches a condition
+  if (requestDecisionE == "yes"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/contact-customer')
+  }
+  if (requestDecisionE == "no"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/submit')
+  }
+  // if (requestDecisionE == "contact"){
+  //   // Send user to next page
+  //   res.redirect('/version9/chipcheck-131119/contact-customer')
+  // }
+  // if (requestDecisionE == "refer"){
+  //   // Send user to next page
+  //   res.redirect('/version9/chipcheck-131119/application-referred')
+  // }
+
+
+})
+
+// Request decision V9.2 CC//
+
+router.post('/9-2-submit-decision-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var submitDecisionE = req.session.data['9-2-submit-decision']
+
+
+// Check whether the variable matches a condition
+  if (submitDecisionE == "accept"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-updated')
+  }
+  if (submitDecisionE == "reject"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/notify-rejection')
+  }
+  if (submitDecisionE == "refer"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-referred')
+  }
+
+
+})
+
+// Request decision V9.2 CC//
+
+router.post('/9-2-hold-decision-answer', function (req, res) {
+
+// Make a variable and give it the value from 'how-many-balls'
+  var holdDecisionE = req.session.data['9-2-hold-decision']
+
+
+// Check whether the variable matches a condition
+  if (holdDecisionE == "open"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-updated')
+  }
+  if (holdDecisionE == "later-time"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-updated')
+  }
+  if (holdDecisionE == "spec-time"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-updated')
+  }
+  if (holdDecisionE == "spec-date"){
+    // Send user to next page
+    res.redirect('/version9/chipcheck-131119/application-updated')
+  }
+
+
+})
+
+
 //
 // Do not delete below //
 

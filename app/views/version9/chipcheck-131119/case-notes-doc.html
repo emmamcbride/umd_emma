@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+UMD Caseworking Prototypes
+{% endblock %}
+
+{% block content %}
+
+<!---Header title--->
+<div class="govuk-width-container">
+
+<div class="govuk-grid-row">
+
+<!-- <span class="govuk-caption-xl">EUS-1234-5678-9012-3456</span> -->
+<h1 class="govuk-heading-xl">Compare identity document details</h1>
+
+
+<!---Styles--->
+
+<style>
+
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
+
+  .photo.medium {
+    background-size: cover;
+  }
+
+  .photo {
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+    background-repeat: no-repeat;
+  }
+
+  .govuk-tag_successful {
+    background-color: #2c673d;
+    float: none;
+  }
+
+  ul.app-task-list__items {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .panel-border-wide.alert-default {
+    border-color: #2b8cc4;
+    background-color: #dbeff9;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  ul.app-task-list__items {
+    padding-left: 0px;
+  }
+
+  h2.govuk-heading-s {
+    font-size: 22px;
+    margin-bottom: 0.6em;
+    margin-top: 0.6em;
+  }
+
+  address.customer--address {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    margin-bottom: 1em;
+  }
+
+  .panel-border-wide.alert-success {
+    border-color: #28a197;
+    background-color: #c6ece9;
+  }
+
+  .panel-border-wide {
+    border-left-width: 10px;
+  }
+
+  .panel {
+    box-sizing: border-box;
+    clear: both;
+    border-left-style: solid;
+    padding: 0.2em 0.7em;
+    margin-bottom: 30px;
+    padding-top: 3.2px;
+    padding-bottom: 3.2px;
+    padding-left: 11.2px;
+    padding-right: 11.2px;
+    text-size-adjust: 100%;
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0px;
+  }
+
+  .govuk-main-wrapper {
+    padding-top: 0px;
+  }
+
+  .filter {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 2em 0;
+  }
+
+  .govuk-grid-column-full {
+    width: 100%;
+    float: left;
+  }
+
+  .govuk-grid-column-full {
+    box-sizing: border-box;
+  }
+
+</style>
+
+<!---Content--->
+
+
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab"  href="/version9/chipcheck-131119/document-check">
+            Submission
+          </a>
+        </li>
+
+        <!-- <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script> -->
+
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="/version9/chipcheck-131119/case-notes">
+            Case notes
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    <div id="case-notes"  style="display: block;">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <h1 class="govuk-heading-xl">
+                    Case notes
+                  </h1>
+                </div>
+            </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+
+                <form method="post" action="next-application--rejected">
+                  <fieldset class="govuk-fieldset">
+                      <p class="font-xsmall">Add a new case note</p>
+                    <div class="govuk-form-group">
+                      <textarea class="govuk-textarea" id="email-content" name="email-content" rows="10" aria-describedby="email-content-hint"></textarea>
+                      <!-- <a class="govuk-link" href="application-submission-check" role="button" draggable="false" style="display:inline-block; margin: 0px 0 0 0px; ">
+                        Preview email
+                      </a> -->
+                    </div>
+                    <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                      Add case note
+                    </button>
+
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                      Clear
+                    </button></div></div>
+                    <br><br><br>
+
+
+            <div id="case-4"  style="margin-bottom: 3em">
+            <p class="font-xsmall">
+              13/12/2019 15:00 by <a href="mailto:jbloggs@homeoffice.gsi.gov.uk" title="Email user">jbloggs@homeoffice.gsi.gov.uk</a>
+            </p>
+            <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to
+              corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the
+              holistic world view of disruptive innovation via workplace diversity and empowerment. Professionally cultivate
+              one-to-one ... <a class="linkToggle" href="#" onclick="toggleVisibility('extraText1');">view more</a></p>
+              <div id="extraText1">
+                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going
+                  forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud
+                solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the
+                  digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information
+                highway will close the loop on focusing solely on the bottom line.</p>
+              </div>
+            </div>
+            <div id="case-3" style="margin-bottom: 3em">
+              <p class="font-xsmall">
+                12/12/2019 10:00 by <a href="mailto:nicholasdyer@homeoffice.gsi.gov.uk" title="Email Nicholas Dyer">nicholasdyer@homeoffice.gsi.gov.uk</a>
+              </p>
+              <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate
+                one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state
+              of the art customer service.</p>
+            </div>
+            <div id="case-2" " style="margin-bottom: 3em">
+            <p class="font-xsmall">
+              10/12/2019 15:00 by <a href="mailto:matildahenderson@homeoffice.gsi.gov.uk" title="Email Matilda Henderson">matildahenderson@homeoffice.gsi.gov.uk</a>
+            </p>
+            <p>A short comment.</p>
+            </div>
+            <div id="case-1"  style="margin-bottom: 3em">
+            <p class="font-xsmall">10/12/2019 10:36 by <a href="mailto:cameronrowley@homeoffice.gsi.gov.uk" title="Email Cameron Rowley">cameronrowley@homeoffice.gsi.gov.uk</a></p>
+            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital
+              divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will
+            close the loop on focusing solely on the bottom line.</p>
+            </div>
+        </div>
+</div></div>
+
+{% endblock %}
