@@ -1,148 +1,260 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-UMD Caseworking Prototypes
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-<!---Header title--->
-
-
-<!---Styles--->
 
 <style>
-  .pagination__summary {
-    float: right;
-    font-family: "GDS Transport", Arial, sans-serif;
-    padding: 8px;
-  }
 
-  .pagination__link {
-    display: block;
-    padding: 5px 10px;
-    text-decoration: none;
-  }
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-  .pagination__item {
-    display: inline-block;
-    list-style: none;
-  }
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
 
-  .pagination {
-    padding: 0px;
-  }
+.pagination__summary {
+	float: right;
+	font-family: "GDS Transport", Arial, sans-serif;
+	padding: 8px;
+}
 
-  .pagination__link.current {
-    color: #0B0C0C;
-    font-weight: 700;
-    border: none;
-  }
+.pagination__link {
+	display: block;
+	padding: 5px 10px;
+	text-decoration: none;
+}
 
-  .filter {
-    background-color: #f8f8f8;
-    padding: 20px;
-    margin: 2em 0;
-  }
+.pagination__item {
+	display: inline-block;
+	list-style: none;
+}
 
-  .govuk-grid-column-full {
-    width: 100%;
-    float: left;
-  }
+.pagination {
+	padding: 0px;
+}
 
-  .govuk-grid-column-full {
-    box-sizing: border-box;
-  }
+.pagination__link.current {
+	color: #0B0C0C;
+	font-weight: 700;
+	border: none;
+}
 
-  .govuk-main-wrapper {
-    padding-top: 0px;
-  }
+.filter {
+	background-color: #f8f8f8;
+	padding: 20px;
+	margin: 2em 0;
+}
 
-  .govuk-checkboxes--small .govuk-checkboxes__label::before {
-    top: 0px;
-    /* width: 24px;
-    height: 24px; */
-  }
+.govuk-grid-column-full {
+	width: 100%;
+	float: left;
+}
 
-  .govuk-checkboxes--small .govuk-checkboxes__label::after {
-    top: 7px;
-    /* left: 6px;
-    width: 9px;
-    height: 3.5px;
-    border-width: 0 0 3px 3px; */
-  }
+.govuk-grid-column-full {
+	box-sizing: border-box;
+}
+
+.govuk-main-wrapper {
+	padding-top: 0px;
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label::before {
+	top: 0px;
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label::after {
+	top: 7px;
+}
 
 </style>
-
-
 
 <!---Content--->
 
 <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Task list</h1>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">Task list</h1>
+</div>
+</div>
+
+<!---Filter--->
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full filter">
+  <div class="govuk-column-full">
+    <h3 class="govuk-heading-m">Filter</h3>
   </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full filter">
-      <div class="govuk-column-full">
-        <h3 class="govuk-heading-m">Filter</h3>
+  <form action="" method="get">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group" style="margin-bottom: 0;">
+          <label class="govuk-label" for="reference-number">
+            Reference number
+          </label>
+          <input class="govuk-input" id="reference-number" name="reference-number" type="text">
+        </div>
       </div>
-      <form action="" method="get">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
-            <div class="govuk-form-group" style="margin-bottom: 0;">
-              <label class="govuk-label" for="reference-number">
-                Reference number
-              </label>
-              <input class="govuk-input" id="reference-number" name="reference-number" type="text">
-            </div>
-          </div>
-          <div class="govuk-grid-column-one-third">
-            <div class="gov-form-group" style="margin-bottom: 0;">
-              <label class="govuk-label" for="status">Status</label>
-              <select class="govuk-select govuk-!-width-full" id="status" name="status">
-                <option value="All types" selected="">All status types</option>
 
-                <option value="new-referral">New referral</option>
-                <option value="ready-for-work">Ready for work</option>
-                <option value="on-hold">On hold</option>
-                <option value="assigned">Assigned</option>
-
-              </select>
-            </div>
-          </div>
-          <div class="govuk-grid-column-one-third">
-            <div class="gov-form-group" style="margin-bottom: 0;">
-              <label class="govuk-label" for="holdType">Hold type</label>
-              <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
-                <option value="All types" selected="">All hold types</option>
-                <option value="none">None</option>
-                <option value="ip_sat_ccd_pre_referral">Hold A</option>
-                <option value="ip_sat_european_arrest_warrant">Hold B</option>
-                <option value="ip_sat_extradition_marker">Hold C</option>
-                <option value="ip_sat_impending_prosecution">Hold D</option>
-                <option value="ip_sat_intel">Hold E</option>
-                <option value="ip_sat_police">Hold F</option>
-                <option value="ip_sat_qa">Hold G</option>
-                <option value="ip_sat_scu_consideration">Hold H</option>
-              </select>
-            </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="gov-form-group" style="margin-bottom: 0;">
+          <label class="govuk-label" for="status">Status</label>
+          <select class="govuk-select govuk-!-width-full" id="status" name="status">
+            <option value="All types" selected="">All status types</option>
+            <option value="referred">Referred</option>
+            <option value="on-hold">On hold</option>
+            </select>
           </div>
         </div>
 
-        <div class="govuk-grid-row" style="margin-top: 1em;">
-          <div class="govuk-grid-column-full">
-            <div class="block-space">
-              <input class="govuk-button" type="submit" value="Submit">
-            </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="gov-form-group" style="margin-bottom: 0;">
+            <label class="govuk-label" for="holdType">Hold type</label>
+            <select class="govuk-select govuk-!-width-full" id="holdType" name="holdType">
+              <option value="All types" selected="">All hold types</option>
+              <option value="none">None</option>
+              <option value="ip_sat_ccd_pre_referral">Hold A</option>
+              <option value="ip_sat_european_arrest_warrant">Hold B</option>
+              <option value="ip_sat_extradition_marker">Hold C</option>
+              <option value="ip_sat_impending_prosecution">Hold D</option>
+              <option value="ip_sat_intel">Hold E</option>
+              <option value="ip_sat_police">Hold F</option>
+              <option value="ip_sat_qa">Hold G</option>
+              <option value="ip_sat_scu_consideration">Hold H</option>
+            </select>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div class="govuk-grid-row" style="margin-top: 1em;">
+        <div class="govuk-grid-column-full">
+          <div class="block-space">
+            <input class="govuk-button" type="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
+</div>
+
+<!---Action cases hidden functions--->
+
+<div id=text style="display:none">
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full bulk">
+      <div class="govuk-column-full">
+        <h3 class="govuk-heading-m">What would you like to do?</h3>
+      </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group" style="margin-bottom: 0;">
+              <div class="govuk-radios__item">
+<input class="govuk-radios__input" id="action-cases" name="action-option" type="radio" value="release-all">
+<label class="govuk-label govuk-radios__label" for="action-cases">
+ Release
+</label>
+</div>
+</div>
+</div>
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="gov-form-group" style="margin-bottom: 0;">
+              <div class="govuk-radios__item">
+<input class="govuk-radios__input" id="action-cases" name="action-option" type="radio" value="accept-all">
+<label class="govuk-label govuk-radios__label" for="action-cases">
+ Accept
+</label>
+</div>
+</div>
+</div>
+
+<div class="govuk-grid-column-one-quarter">
+<div class="gov-form-group" style="margin-bottom: 0;">
+<div class="govuk-radios__item">
+<input class="govuk-radios__input" id="action-cases" name="action-option" type="radio" value="reject-all">
+<label class="govuk-label govuk-radios__label" for="action-cases">
+ Reject
+</label>
+</div>
+</div>
+</div>
+
+<div class="govuk-grid-column-one-quarter">
+<div class="gov-form-group" style="margin-bottom: 0;">
+<div class="govuk-radios__item">
+ <input class="govuk-radios__input" id="action-cases" name="action-option" type="radio" value="hold-all">
+ <label class="govuk-label govuk-radios__label" for="action-cases">
+   Hold
+ </label>
+</div>
+  </div>
+    </div>
+
+      </div>
+      </div>
+      </div>
+
+      <br>
+
+<!-- Trigger/Open The Modal -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <button class="govuk-button" type="submit" value="submit" id="myBtn">Apply</button>
+</div>
+</div>
+
+<!-- The Modal -->
+        <div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+<h3 class="govuk-heading-m">You are about to reject 32 selected cases, this action cannot be undone</h3>
+
+<h2 class="govuk-heading-s">Add a reason for rejection</h2>
+<span id="more-detail-hint" class="govuk-hint">
+This will apply to all selected cases
+</span>
+
+<div class="govuk-form-group">
+  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+
+<button class="continue govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+Continue
+</button>
+<button class="cancel govuk-button govuk-button--secondary" data-module="govuk-button">
+Cancel
+  </button>
+  </div>
+  </div>
+  </div>
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -152,202 +264,202 @@ UMD Caseworking Prototypes
             <th width="5%" class="govuk-table__header" scope="col">
               <div class="govuk-checkboxes govuk-checkboxes--small">
                 <div class="govuk-checkboxes__item">
-                  <input class="selectall govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-all">
-                  <label class="govuk-label govuk-checkboxes__label" for="select">
+                  <input class="selectall govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-all">
+                  <label class="govuk-label govuk-checkboxes__label" for="myCheck">
                   </label>
-                <!-- </div>
-              </div> -->
-            </th>
-            <th class="govuk-table__header" scope="col">Reference</th>
-            <th class="govuk-table__header" scope="col">Created date</th>
-            <th class="govuk-table__header" scope="col">Status</th>
-            <th class="govuk-table__header" scope="col">Hold type</th>
-          </tr>
-        </thead>
+                  </th>
+                  <th class="govuk-table__header" scope="col">Reference</th>
+                  <th class="govuk-table__header" scope="col">Created date</th>
+                  <th class="govuk-table__header" scope="col">Status</th>
+                  <th class="govuk-table__header" scope="col">Hold type</th>
+                </tr>
+              </thead>
 
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">28/08/2019</td>
-            <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell">F</td>
-          </tr>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">28/08/2019</td>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell">F</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">29/08/2019</td>
-            <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">29/08/2019</td>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">03/09/2019</td>
-            <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">A</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">03/09/2019</td>
+                  <td class="govuk-table__cell">Ready for work</td>
+                  <td class="govuk-table__cell">A</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">10/09/2019</td>
-            <td class="govuk-table__cell">Assigned</td>
-            <td class="govuk-table__cell">B</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">10/09/2019</td>
+                  <td class="govuk-table__cell">Assigned</td>
+                  <td class="govuk-table__cell">B</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">11/09/2019</td>
-            <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">F</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">11/09/2019</td>
+                  <td class="govuk-table__cell">Ready for work</td>
+                  <td class="govuk-table__cell">F</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">12/10/2019</td>
-            <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell">G</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">12/10/2019</td>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell">G</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">20/09/2019</td>
-            <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">A</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">20/09/2019</td>
+                  <td class="govuk-table__cell">Ready for work</td>
+                  <td class="govuk-table__cell">A</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">23/09/2019</td>
-            <td class="govuk-table__cell">Assigned</td>
-            <td class="govuk-table__cell">C</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">23/09/2019</td>
+                  <td class="govuk-table__cell">Assigned</td>
+                  <td class="govuk-table__cell">C</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">05/10/2019</td>
-            <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell">E</td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">05/10/2019</td>
+                  <td class="govuk-table__cell">Ready for work</td>
+                  <td class="govuk-table__cell">E</td>
+                </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="individual govuk-checkboxes__input" id="select" name="select" type="checkbox" value="select-1">
-                      <label class="govuk-label govuk-checkboxes__label" for="select">
-                      </label>
-                    </div>
-                  </div>
-                </td>
-            <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
-            <td class="govuk-table__cell">25/10/2019</td>
-            <td class="govuk-table__cell">Ready for work</td>
-            <td class="govuk-table__cell"></td>
-          </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="individual govuk-checkboxes__input" id="myCheck" onclick="myFunction()" name="select" type="checkbox" value="select-1">
+                            <label class="govuk-label govuk-checkboxes__label" for="myCheck">
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                  <td class="govuk-table__cell"><a href="approving-identity-submission-check.html" title="Submission details for 1234-5678-9012-3456">1234-5678-9012-3456</a></td>
+                  <td class="govuk-table__cell">25/10/2019</td>
+                  <td class="govuk-table__cell">Ready for work</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
 
-        </tbody>
-      </table>
+              </tbody>
+            </table>
 
-
-
-      <nav role="navigation" aria-label="Pagination">
-        <div class="pagination__summary">Showing 1 - 10 of 186 results</div>
-        <ul class="pagination">
-          <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li> -->
-          <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 3">3</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
-          <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
-        </ul>
-      </nav>
+            <nav role="navigation" aria-label="Pagination">
+              <div class="pagination__summary">Showing 1 - 10 of 186 results</div>
+              <ul class="pagination">
+                <!-- <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li> -->
+                <li class="pagination__item"><a class="pagination__link current" href="#0" aria-current="true" aria-label="Page 1, current page">1</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 2">2</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 3">3</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 4">4</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Page 5">5</a></li>
+                <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Next page">Next <span aria-hidden="true" role="presentation">&raquo;</span></a></li>
+              </ul>
+            </nav>
 
 
-    </div>
-  </div>
-</main>
+
+          </div>
+        </div>
+      </main>
+
+
+
 
 
 {% endblock %}
