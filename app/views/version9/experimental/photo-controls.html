@@ -1,111 +1,118 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <style>
+  body,
+  body * {
+    box-sizing: border-box;
+  }
 
-  body, body *{
-	box-sizing:border-box;
-}
-body{padding:2em 4em;}
-#imgContent{
-/* 	border:1px green solid; */
-	padding-top:2.5em;
-	display:inline-block;
-	position:relative;
-}
-#imgControls{
-	position:absolute;
-	top: 0.3em; right: 0;
-/* 	border:thin dashed red; */
-	text-align:right;
-}
-// #imgControls button, #imgControls select{
-// 	width:2em;
-// 	font:16px;
-// 	height:30px;
-// 	vertical-align:middle;
-// }
-#imgFrame{
-/* 	padding:5px; */
-	height:360px;
-	width:540px;
-	overflow:auto;
-	position:relative;
-  border: 10px solid #ffffff;
-  margin-bottom: 3em;
-  box-shadow: 0px 2px 6px 2px #bfc1c3;
-}
+  body {
+    padding: 2em 4em;
+  }
 
-#invoiceImg{
-	width:100%;
-	transform-origin:0 0
-	object-fit: cover;
-}
-#zoomSelect, #imageSelect{
-	width:auto !important;
-}
-#imgControls label{
-	font:16px;
-}
-label+label{
-	margin-left:1em;
-}
+  #imgContent {
+    /* 	border:1px green solid; */
+    padding-top: 2.5em;
+    display: inline-block;
+    position: relative;
+  }
+
+  #imgControls {
+    position: absolute;
+    top: 0.3em;
+    right: 0;
+    /* 	border:thin dashed red; */
+    text-align: right;
+  }
+
+  // #imgControls button, #imgControls select{
+  // 	width:2em;
+  // 	font:16px;
+  // 	height:30px;
+  // 	vertical-align:middle;
+  // }
+  #imgFrame {
+    /* 	padding:5px; */
+    height: 360px;
+    width: 540px;
+    overflow: auto;
+    position: relative;
+    border: 10px solid #ffffff;
+    margin-bottom: 3em;
+    box-shadow: 0px 2px 6px 2px #bfc1c3;
+  }
+
+  #invoiceImg {
+    width: 100%;
+    transform-origin: 0 0 object-fit: cover;
+  }
+
+  #zoomSelect,
+  #imageSelect {
+    width: auto !important;
+  }
+
+  #imgControls label {
+    font: 16px;
+  }
+
+  label+label {
+    margin-left: 1em;
+  }
 
 
 
-// Additional
+  // Additional
 
-.photo-controls{
-  font-size: 16px !important;
-  padding: 0.33em 0.67em;
-  border: 1px solid #bfc1c3;
-  background: #dee0e2;
-  margin: 15px 0;
+  .photo-controls {
+    font-size: 16px !important;
+    padding: 0.33em 0.67em;
+    border: 1px solid #bfc1c3;
+    background: #dee0e2;
+    margin: 15px 0;
 
-}
+  }
 
-p {
-  display: inline-block;
-  margin: 0;
-}
+  p {
+    display: inline-block;
+    margin: 0;
+  }
 
-section {
-  display: inline-block;
-  margin-right: 10px;
-}
+  section {
+    display: inline-block;
+    margin-right: 10px;
+  }
 
-a {
-  margin-right: 5px;
-  margin-left: 5px;
-}
+  a {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 
-.photo.medium.doubleWidth {
-  width: 540px;
-  height: 360px;
-}
+  .photo.medium.doubleWidth {
+    width: 540px;
+    height: 360px;
+  }
 
-.photo.medium {
-  background-size: cover;
-}
+  .photo.medium {
+    background-size: cover;
+  }
 
-.photo-controls .photoContainer--section:first-child {
-  margin-left: 0;
-}
+  .photo-controls .photoContainer--section:first-child {
+    margin-left: 0;
+  }
 
-.photo-controls .photoContainer--section {
-  display: inline-block;
-}
-
+  .photo-controls .photoContainer--section {
+    display: inline-block;
+  }
 </style>
 
 <script>
-
-
   // var transformVals = window.getComputedStyle(img, null).getPropertyValue("transform").match(/([-+]?[\d\.]+)/g);
 
   var zoomInButton = document.getElementById('zoomInButton');
@@ -120,175 +127,170 @@ a {
   rotLeftButton.addEventListener('click', rotate);
   rotRightButton.addEventListener('click', rotate);
 
-  function adjustFrame(){
-  	imgFrame.style.overflow="hidden";
-  	window.setTimeout(function(){
-  		imgFrame.style.overflow="auto";
-  	},0);
+  function adjustFrame() {
+    imgFrame.style.overflow = "hidden";
+    window.setTimeout(function() {
+      imgFrame.style.overflow = "auto";
+    }, 0);
   }
 
-  function zoom(e){
-  	var buttonCalled = e.currentTarget.id;
-  	var transformVals = img.style["transform"].match(/([-+]?[\d\.]+)/g);
-  	var zoomVal = transformVals ? transformVals[0] - 0 : 1 ;
-  	var adjustVal = 0.1;
-  	var imgClass = img.className;
+  function zoom(e) {
+    var buttonCalled = e.currentTarget.id;
+    var transformVals = img.style["transform"].match(/([-+]?[\d\.]+)/g);
+    var zoomVal = transformVals ? transformVals[0] - 0 : 1;
+    var adjustVal = 0.1;
+    var imgClass = img.className;
 
-  	if(buttonCalled === "zoomSelect"){
-  		zoomVal = this.value;
-  	}else if(buttonCalled === "zoomInButton"){
-  		if(zoomVal >= 2) return false;
-  		zoomVal = (zoomVal + adjustVal).toFixed(1);
-  		zoomSelect.value = zoomVal;
-  	}else{
-  		if( zoomVal <= 0.5) return false;
-  		adjustVal = -0.1;
-  		zoomVal = (zoomVal + adjustVal).toFixed(1);
-  		zoomSelect.value = zoomVal;
-  	}
+    if (buttonCalled === "zoomSelect") {
+      zoomVal = this.value;
+    } else if (buttonCalled === "zoomInButton") {
+      if (zoomVal >= 2) return false;
+      zoomVal = (zoomVal + adjustVal).toFixed(1);
+      zoomSelect.value = zoomVal;
+    } else {
+      if (zoomVal <= 0.5) return false;
+      adjustVal = -0.1;
+      zoomVal = (zoomVal + adjustVal).toFixed(1);
+      zoomSelect.value = zoomVal;
+    }
 
-  	switch(imgClass) {
-  		case "":
-  				img.style.transform = "scale("+zoomVal+") rotate(0deg) translate(0, 0)";
-  				img.className = "";
-  				break;
-  		case "ninety":
-  				img.style.transform = "scale("+zoomVal+") rotate(90deg) translate(0, -100%)";
-  				img.className = "ninety";
-  				break;
-  		case "one-eighty":
-  				img.style.transform = "scale("+zoomVal+") rotate(180deg) translate(-100%,-100%)";
-  				img.className = "one-eighty";
-  				break;
-  		case "two-seventy":
-  				img.style.transform = "scale("+zoomVal+") rotate(270deg) translate(-100%, 0)";
-  				img.className = "two-seventy";
-  				break;
-  		default:
-  				img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
-  	}
+    switch (imgClass) {
+      case "":
+        img.style.transform = "scale(" + zoomVal + ") rotate(0deg) translate(0, 0)";
+        img.className = "";
+        break;
+      case "ninety":
+        img.style.transform = "scale(" + zoomVal + ") rotate(90deg) translate(0, -100%)";
+        img.className = "ninety";
+        break;
+      case "one-eighty":
+        img.style.transform = "scale(" + zoomVal + ") rotate(180deg) translate(-100%,-100%)";
+        img.className = "one-eighty";
+        break;
+      case "two-seventy":
+        img.style.transform = "scale(" + zoomVal + ") rotate(270deg) translate(-100%, 0)";
+        img.className = "two-seventy";
+        break;
+      default:
+        img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
+    }
 
-  	if(zoomVal > 1){
-  		adjustFrame();
-  	}else{
-  		imgFrame.style.overflow="hidden";
-  	}
+    if (zoomVal > 1) {
+      adjustFrame();
+    } else {
+      imgFrame.style.overflow = "hidden";
+    }
   }
 
-  function rotate(e){
-  	var buttonCalled = e.currentTarget.id;
-  	var transformVals = img.style["transform"].match(/([-+]?[\d\.]+)/g);
-  	var zoomVal = transformVals ? transformVals[0] - 0 : 1 ;
-  	var imgClass = img.className;
+  function rotate(e) {
+    var buttonCalled = e.currentTarget.id;
+    var transformVals = img.style["transform"].match(/([-+]?[\d\.]+)/g);
+    var zoomVal = transformVals ? transformVals[0] - 0 : 1;
+    var imgClass = img.className;
 
-  	if(buttonCalled === "rotRightButton"){
-  		switch(imgClass) {
-  			case "":
-  					img.style.transform = "scale("+zoomVal+") rotate(90deg) translate(0, -100%)";
-  					img.className = "ninety";
-  					break;
-  			case "ninety":
-  					img.style.transform = "scale("+zoomVal+") rotate(180deg) translate(-100%,-100%)";
-  					img.className = "one-eighty";
-  					break;
-  			case "one-eighty":
-  					img.style.transform = "scale("+zoomVal+") rotate(270deg) translate(-100%, 0)";
-  					img.className = "two-seventy";
-  					break;
-  			case "two-seventy":
-  					img.style.transform = "scale("+zoomVal+") rotate(0deg) translate(0, 0)";
-  					img.className = "";
-  					break;
-  			default:
-  					img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
-  		}
-  	}else{
-  				switch(imgClass) {
-  			case "":
-  					img.style.transform = "scale("+zoomVal+") rotate(270deg) translate(-100%, 0)";
-  					img.className = "two-seventy";
-  					break;
-  			case "ninety":
-  					img.style.transform = "scale("+zoomVal+") rotate(0deg) translate(0, 0)";
-  					img.className = "";
-  					break;
-  			case "one-eighty":
-  					img.style.transform = "scale("+zoomVal+") rotate(90deg) translate(0, -100%)";
-  					img.className = "ninety";
-  					break;
-  			case "two-seventy":
-  					img.style.transform = "scale("+zoomVal+") rotate(180deg) translate(-100%,-100%)";
-  					img.className = "one-eighty";
-  					break;
-  			default:
-  					img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
-  		}
-  	}
-  	adjustFrame();
+    if (buttonCalled === "rotRightButton") {
+      switch (imgClass) {
+        case "":
+          img.style.transform = "scale(" + zoomVal + ") rotate(90deg) translate(0, -100%)";
+          img.className = "ninety";
+          break;
+        case "ninety":
+          img.style.transform = "scale(" + zoomVal + ") rotate(180deg) translate(-100%,-100%)";
+          img.className = "one-eighty";
+          break;
+        case "one-eighty":
+          img.style.transform = "scale(" + zoomVal + ") rotate(270deg) translate(-100%, 0)";
+          img.className = "two-seventy";
+          break;
+        case "two-seventy":
+          img.style.transform = "scale(" + zoomVal + ") rotate(0deg) translate(0, 0)";
+          img.className = "";
+          break;
+        default:
+          img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
+      }
+    } else {
+      switch (imgClass) {
+        case "":
+          img.style.transform = "scale(" + zoomVal + ") rotate(270deg) translate(-100%, 0)";
+          img.className = "two-seventy";
+          break;
+        case "ninety":
+          img.style.transform = "scale(" + zoomVal + ") rotate(0deg) translate(0, 0)";
+          img.className = "";
+          break;
+        case "one-eighty":
+          img.style.transform = "scale(" + zoomVal + ") rotate(90deg) translate(0, -100%)";
+          img.className = "ninety";
+          break;
+        case "two-seventy":
+          img.style.transform = "scale(" + zoomVal + ") rotate(180deg) translate(-100%,-100%)";
+          img.className = "one-eighty";
+          break;
+        default:
+          img.style.transform = "scale(1) rotate(0deg) translate(0, 0)";
+      }
+    }
+    adjustFrame();
   }
 
 
   // Popup window function
-  	function basicPopup(url) {
-  popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-  	}
-
+  function basicPopup(url) {
+    popupWindow = window.open(url, 'popUpWindow', 'height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+  }
 </script>
 
 
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-<!-- <main class="govuk-main-wrapper " id="main-content" role="main"> -->
- <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-<!-- <div id="imgContent"> -->
-	<!-- <div id="imgControls"> -->
 
-  <div class="photoContainer" id="newPhotoContainer"
-  <div class="photoContainer--frame"
-
-    <div class="photo-controls photoContainer--controls"
-    style="width: 540px;
+    <div class="photoContainer" id="newPhotoContainer" <div class="photoContainer--frame" <div class="photo-controls photoContainer--controls" style="width: 540px;
     font-size: 16px !important;
     padding: 0.33em 0.67em;
     border: 1px solid #bfc1c3;
     background-color: #dee0e2;
     margin: 15px 0;">
 
-                                  <section class="photoContainer--section photoContainer--section--rotate">
-                                    <p>Rotate:</p>
-                                    <a id="rotLeftButton"><span aria-label="Rotate left"</span><i class='fas fa-undo-alt' style='color:#225fa0'></i></a>
-                                    <a id="rotRightButton"><span aria-label="Rotate right"</span><i class='fas fa-redo-alt' style='color:#225fa0'></i></a>
-                                  </section>
-                                  <section class="photoContainer--section photoContainer--section--zoom">
-                                    <p>Zoom:</p>
-                                    <a id="zoomInButton"><span aria-label="Zoom in"</span><i class='fas fa-search-plus' style='color:#225fa0'></i></a>
-                                    <a id="zoomOutButton"><span aria-label="Zoom out"</span><i class='fas fa-search-minus' style='color:#225fa0'></i></a>
-                                    <select hidden id="zoomSelect">
-                                    </select>
-                                    <a id="popOutWindow" onclick="window.open('/public/images/passport-3.jpeg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');"><i class='far fa-clone' style='color:#225fa0'></i></a>
-                                  </section>
+      <section class="photoContainer--section photoContainer--section--rotate">
+        <p>Rotate:</p>
+        <a id="rotLeftButton"><span aria-label="Rotate left" </span> <i class='fas fa-undo-alt' style='color:#225fa0'></i></a>
+        <a id="rotRightButton"><span aria-label="Rotate right" </span> <i class='fas fa-redo-alt' style='color:#225fa0'></i></a>
+      </section>
+      <section class="photoContainer--section photoContainer--section--zoom">
+        <p>Zoom:</p>
+        <a id="zoomInButton"><span aria-label="Zoom in" </span> <i class='fas fa-search-plus' style='color:#225fa0'></i></a>
+        <a id="zoomOutButton"><span aria-label="Zoom out" </span> <i class='fas fa-search-minus' style='color:#225fa0'></i></a>
+        <select hidden id="zoomSelect">
+        </select>
+        <a id="popOutWindow" onclick="window.open('/public/images/passport-3.jpeg','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');"><i
+            class='far fa-clone' style='color:#225fa0'></i></a>
+      </section>
 
 
 
-                                  <section class="photoContainer--section photoContainer--section--move">
-                                  <p>Move:</p>
-                                  <a onclick="changePos()" value="Up"><i class='fas fa-arrow-up' style='color:#225fa0'></i></a>
-                                  <a class="btn" onclick="moveDown()" value="Down"><i class='fas fa-arrow-down' style='color:#225fa0'></i></a>
-                                  <a class="btn" onclick="moveLeft()" value="Left"><i class='fas fa-arrow-left' style='color:#225fa0'></i></a>
-                                  <a class="btn" onclick="moveRight()" value="Right"><i class='fas fa-arrow-right' style='color:#225fa0'></i></a>
-                                  <a class="btn" id="button-reset" value="Reset"><i class='	fas fa-times' style='color:#225fa0'></i></a>
-                                </section>
-                              </div>
+      <section class="photoContainer--section photoContainer--section--move">
+        <p>Move:</p>
+        <a onclick="changePos()" value="Up"><i class='fas fa-arrow-up' style='color:#225fa0'></i></a>
+        <a class="btn" onclick="moveDown()" value="Down"><i class='fas fa-arrow-down' style='color:#225fa0'></i></a>
+        <a class="btn" onclick="moveLeft()" value="Left"><i class='fas fa-arrow-left' style='color:#225fa0'></i></a>
+        <a class="btn" onclick="moveRight()" value="Right"><i class='fas fa-arrow-right' style='color:#225fa0'></i></a>
+        <a class="btn" id="button-reset" value="Reset"><i class='	fas fa-times' style='color:#225fa0'></i></a>
+      </section>
+    </div>
 
 
-	<div id="imgFrame">
-		<img src="/public/images/passport-3.jpeg" id="invoiceImg"/>
-	</div>
+    <div id="imgFrame">
+      <img src="/public/images/passport-3.jpeg" id="invoiceImg" />
+    </div>
 
 
-  </div></div>
-  </div></div>
+  </div>
+</div>
+</div>
+</div>
 
 {% endblock %}
